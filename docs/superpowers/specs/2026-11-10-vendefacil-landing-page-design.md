@@ -72,6 +72,7 @@ src/
   * **Subtítulo:** *"Crea tu página, sube tu primer producto y comienza a cobrar hoy mismo por solo $99 MXN al mes. Pruébalo ahora mismo:"*
 * **Tarjeta de Creación WYSIWYG (Paso a paso visible sin fricción):**
   * **Paso 1 (Nombre de marca):** Input de texto con auto-generación de slug en minúsculas y eliminación de caracteres especiales.
+    * *Micro-educación en vivo:* Indicador visual inmediato debajo del input mostrando: `Tu subdominio: https://[slug].vendefacil.online` (ej. si el usuario escribe "Mis Zapatos", se formatea y muestra en tiempo real como `miszapatos.vendefacil.online` aclarando que los espacios se adaptan automáticamente a formato web sin espacios).
   * **Paso 2 (Producto estrella):** Input de texto descriptivo con sugerencia de placeholder.
   * **Paso 3 (Imagen del producto):**
     * Zona Drag & Drop interactiva con lector FileReader para convertir imágenes locales a data URLs de inmediato.
@@ -102,8 +103,14 @@ src/
 
 ### 4.6 Sección de Precios (Plan Lite Único)
 * Tarjeta destacada de columna única:
-  * Precio: **$99 MXN / mes**.
-  * Incluye: Subdominio inmediato (`.vendefacil.online`), catálogo de hasta 10 productos, integración con Mercado Pago, sin comisiones ocultas, notificaciones por WhatsApp y certificado SSL.
+  * Precio: **$99 MXN / mes** con insignia destacada: *"Cancela cuando quieras • Sin letras chiquitas"*.
+  * Incluye:
+    * Subdominio inmediato (`.vendefacil.online`).
+    * Catálogo de hasta 10 productos con **almacenamiento de imágenes optimizado** (WebP / CDN ultrarrápido).
+    * Integración con Mercado Pago (el dinero va directo a tu cuenta).
+    * 0% comisiones ocultas por venta.
+    * Notificaciones automáticas de pedidos por WhatsApp.
+    * Certificado de seguridad SSL incluido.
   * Upsell elegante: Mención de dominios `.com` o `.mx` personalizados disponibles desde el panel de control.
   * CTA: *"Comenzar ahora por $99 MXN"*.
 
@@ -113,8 +120,10 @@ src/
 ### 4.8 Modal de Publicación y Checkout
 * Activado por el CTA del creador:
   * Muestra felicitación interactiva: *"¡Tu tienda está lista para activarse!"*.
-  * Despliega la URL final asignada.
-  * Formulario rápido de 2 campos (Nombre y Email) y botón de simulación de pago con Mercado Pago que completa el onboarding.
+  * Despliega la URL final asignada: `https://[slug].vendefacil.online`.
+  * Formulario de creación de cuenta: Nombre completo, Correo electrónico y Contraseña de acceso (o botón alternativo de *"Acceder con Enlace Mágico por Correo"* para que el emprendedor tenga absoluta certidumbre de cómo gestionará su panel tras el pago).
+  * Resumen transparente: Total a pagar **$99 MXN** con insignia de seguridad Mercado Pago.
+  * Botón de simulación de pago seguro que completa el onboarding y da acceso al panel de administración.
 
 ---
 
