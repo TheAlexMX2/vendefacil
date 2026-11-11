@@ -107,13 +107,13 @@ export default function Pricing({ onPublishClick }) {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button with High-Contrast Emerald Green */}
             <button
               onClick={onPublishClick}
-              className="w-full py-4 px-6 bg-brand-600 hover:bg-brand-700 text-white font-bold text-base rounded-2xl shadow-xl shadow-brand-600/30 hover:shadow-brand-600/40 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+              className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-500 active:scale-[0.99] text-white font-extrabold text-base sm:text-lg rounded-2xl shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/40 transition-all flex items-center justify-center gap-2.5 group cursor-pointer"
             >
               <span>Comenzar ahora por $99 MXN</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
             </button>
 
             <p className="mt-3 text-center text-xs text-slate-400">

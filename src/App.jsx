@@ -15,6 +15,7 @@ export default function App() {
   const [storeState, setStoreState] = useState(DEFAULT_STORE);
   const [isPublishOpen, setIsPublishOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState(null);
 
   const handleOpenPublish = () => {
     setIsPublishOpen(true);
@@ -27,6 +28,9 @@ export default function App() {
       productPrice: example.price,
       productImage: example.imageUrl,
     });
+    setToastMessage(`¡Tienda "${example.name}" cargada en el editor y teléfono!`);
+    setTimeout(() => setToastMessage(null), 3500);
+
     // Smooth scroll up to hero creator
     const creatorElement = document.getElementById('creador');
     if (creatorElement) {
@@ -59,11 +63,22 @@ export default function App() {
         <Pricing onPublishClick={handleOpenPublish} />
 
         {/* Casos de Éxito / Ejemplos */}
-        <StoreExamples onLoadExample={handleLoadExample} />
+        <StoreExamples
+          onLoadExample={handleLoadExample}
+          currentBrandName={storeState.brandName}
+        />
       </main>
 
       {/* 5. Footer Completo */}
       <Footer />
+
+      {/* Interactive Toast Feedback */}
+      {toastMessage && (
+        <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 animate-fadeIn">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+          <span className="text-xs font-semibold">{toastMessage}</span>
+        </div>
+      )}
 
       {/* Interactive Modals */}
       <PublishModal

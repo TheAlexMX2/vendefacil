@@ -122,12 +122,14 @@ export default function PhoneMockup({ storeState }) {
                 </h3>
 
                 <div className="pt-1 flex items-baseline gap-2">
-                  <span className="text-xl font-extrabold text-slate-900">
+                  <span className="text-xl font-extrabold text-slate-900 transition-all duration-200 bg-brand-50/50 px-1.5 py-0.5 rounded-lg border border-brand-100/50">
                     {formatMXN(displayPrice)}
                   </span>
-                  <span className="text-[11px] text-slate-400 line-through">
-                    {formatMXN(displayPrice * 1.25)}
-                  </span>
+                  {displayPrice > 0 && (
+                    <span className="text-[11px] text-slate-400 line-through">
+                      {formatMXN(Math.round(displayPrice * 1.25))}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -150,7 +152,7 @@ export default function PhoneMockup({ storeState }) {
                   ) : (
                     <>
                       <ShoppingBag className="w-4 h-4" />
-                      <span>Comprar con Mercado Pago</span>
+                      <span>Comprar con Mercado Pago • {formatMXN(displayPrice)}</span>
                     </>
                   )}
                 </button>

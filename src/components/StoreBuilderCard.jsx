@@ -9,7 +9,11 @@ import {
   Image as ImageIcon,
   Check,
   Globe2,
-  Info
+  CheckCircle2,
+  CreditCard,
+  Percent,
+  ShieldCheck,
+  MessageCircle
 } from 'lucide-react';
 import { slugifyBrand, formatMXN } from '../utils/formatters.js';
 import { PRODUCT_PRESETS } from '../data/presets.js';
@@ -109,18 +113,18 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             />
           </div>
           
-          {/* Micro-educación de Subdominio en Vivo */}
-          <div className="mt-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 flex items-start gap-2 text-xs">
-            <Globe2 className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
-            <div className="flex-1 overflow-hidden">
-              <div className="text-slate-500 text-[11px] font-medium flex items-center gap-1">
-                <span>Tu subdominio gratuito:</span>
-                <span className="text-[10px] text-slate-400">(los espacios se adaptan automáticamente)</span>
-              </div>
-              <div className="font-mono font-semibold text-brand-700 truncate">
-                https://<span className="text-brand-900 bg-brand-100 px-1 py-0.5 rounded">{brandSlug}</span>.vendefacil.online
-              </div>
+          {/* Subdominio en vivo conciso con check de disponibilidad */}
+          <div className="mt-1.5 flex items-center justify-between text-xs px-1">
+            <div className="flex items-center gap-1.5 font-mono text-slate-600 truncate">
+              <Globe2 className="w-3.5 h-3.5 text-brand-600 shrink-0" />
+              <span className="truncate">
+                https://<strong className="text-brand-700 font-bold">{brandSlug}</strong>.vendefacil.online
+              </span>
             </div>
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md shrink-0 border border-emerald-200/70">
+              <Check className="w-3 h-3 stroke-[3]" />
+              <span>Disponible</span>
+            </span>
           </div>
         </div>
 
@@ -237,7 +241,7 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             <DollarSign className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              value={storeState.productPrice || ''}
+              value={storeState.productPrice === 0 ? '' : storeState.productPrice}
               onChange={handlePriceChange}
               placeholder="350"
               className="w-full pl-10 pr-16 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-600 transition-all placeholder:text-slate-400"
@@ -245,6 +249,25 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             <div className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 pointer-events-none">
               MXN
             </div>
+          </div>
+
+          {/* Quick Price Shortcuts for Instant Feedback */}
+          <div className="mt-2 flex items-center gap-1.5 text-xs">
+            <span className="text-[11px] text-slate-400">Atajos rápidos:</span>
+            {[199, 320, 450, 790].map((quickPrice) => (
+              <button
+                key={quickPrice}
+                type="button"
+                onClick={() => setStoreState((prev) => ({ ...prev, productPrice: quickPrice }))}
+                className={`px-2 py-0.5 rounded-md text-[11px] font-semibold border transition-all cursor-pointer ${
+                  storeState.productPrice === quickPrice
+                    ? 'bg-brand-100 border-brand-300 text-brand-800'
+                    : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
+                }`}
+              >
+                ${quickPrice}
+              </button>
+            ))}
           </div>
         </div>
       </div>
@@ -264,6 +287,26 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
           <span className="mx-1.5">•</span>
           Sin contratos forzosos
         </p>
+
+        {/* Condensed Trust Badges right below CTA */}
+        <div className="mt-4 pt-3.5 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-slate-500 font-medium">
+          <div className="flex items-center gap-1.5 justify-center sm:justify-start">
+            <CreditCard className="w-3.5 h-3.5 text-brand-600 shrink-0" />
+            <span className="truncate">Mercado Pago</span>
+          </div>
+          <div className="flex items-center gap-1.5 justify-center sm:justify-start">
+            <Percent className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="truncate">0% Comisiones</span>
+          </div>
+          <div className="flex items-center gap-1.5 justify-center sm:justify-start">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="truncate">Cifrado SSL 256</span>
+          </div>
+          <div className="flex items-center gap-1.5 justify-center sm:justify-start">
+            <MessageCircle className="w-3.5 h-3.5 text-brand-600 shrink-0" />
+            <span className="truncate">WhatsApp Ready</span>
+          </div>
+        </div>
       </div>
     </div>
   );

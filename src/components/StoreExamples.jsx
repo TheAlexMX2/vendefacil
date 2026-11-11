@@ -1,8 +1,15 @@
-import React from 'react';
-import { ExternalLink, Sparkles, ShoppingBag, ArrowUpRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Sparkles, ShoppingBag, ArrowUpRight, Check } from 'lucide-react';
 import { PRODUCT_PRESETS } from '../data/presets.js';
 
-export default function StoreExamples({ onLoadExample }) {
+export default function StoreExamples({ onLoadExample, currentBrandName }) {
+  const [clickedId, setClickedId] = useState(null);
+
+  const handleClick = (item) => {
+    setClickedId(item.id);
+    onLoadExample(item);
+    setTimeout(() => setClickedId(null), 2500);
+  };
   return (
     <section id="ejemplos" className="py-20 bg-slate-50 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,11 +65,24 @@ export default function StoreExamples({ onLoadExample }) {
 
                 <button
                   type="button"
-                  onClick={() => onLoadExample(item)}
-                  className="w-full py-2.5 px-4 bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 border border-slate-200 hover:border-brand-200 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  onClick={() => handleClick(item)}
+                  className={`w-full py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm ${
+                    clickedId === item.id || currentBrandName === item.name
+                      ? 'bg-emerald-600 text-white border border-emerald-600 shadow-emerald-600/20'
+                      : 'bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 border border-slate-200 hover:border-brand-200'
+                  }`}
                 >
-                  <span>Cargar en el editor para probar</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  {clickedId === item.id || currentBrandName === item.name ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      <span>¡Cargado en el editor y teléfono!</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Cargar en el editor para probar</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </>
+                  )}
                 </button>
               </div>
             </div>
