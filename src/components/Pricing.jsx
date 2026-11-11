@@ -18,7 +18,7 @@ export default function Pricing({ onPublishClick }) {
     { text: 'Catálogo de hasta 10 productos estrella (ideal para comenzar)', strong: true },
     { text: 'Almacenamiento de imágenes optimizado (WebP & CDN de alta velocidad)', strong: false },
     { text: 'Integración directa con Mercado Pago (el dinero va directo a tu cuenta)', strong: true },
-    { text: '0% comisiones ocultas por venta (solo la tarifa estándar del procesador)', strong: true },
+    { text: 'Sin comisiones por usar VendeFácil. Todo el dinero va directo a tu cuenta de Mercado Pago.', strong: true },
     { text: 'Notificaciones automáticas de nuevos pedidos por WhatsApp', strong: false },
     { text: 'Certificado de seguridad SSL (https) para máxima confianza', strong: false },
     { text: 'Panel de control intuitivo optimizado para celular y laptop', strong: false },
@@ -96,14 +96,14 @@ export default function Pricing({ onPublishClick }) {
               ))}
             </div>
 
-            {/* Subtle Upsell Box */}
+            {/* Dominio personalizado sin riesgo de precio fijo (Opción B) */}
             <div className="mb-8 p-4 rounded-2xl bg-slate-50 border border-dashed border-slate-300 flex items-start gap-3">
               <Globe className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div className="text-xs text-slate-600">
                 <strong className="text-slate-900 font-bold block mb-0.5">
-                  ¿Quieres tu propio dominio personalizado?
+                  ¿Ya tienes o quieres tu propio dominio .com?
                 </strong>
-                Dominios <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800">.com</code> o <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800">.mx</code> disponibles directamente desde tu panel de control por solo $199 MXN/año cuando estés listo.
+                Cómpralo directamente desde tu panel o conecta el tuyo gratis cuando estés listo.
               </div>
             </div>
 

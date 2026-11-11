@@ -24,6 +24,8 @@ export default function App() {
   const handleLoadExample = (example) => {
     setStoreState({
       brandName: example.name,
+      brandLogo: null,
+      themeColor: example.themeColor || DEFAULT_STORE.themeColor,
       productName: example.productName,
       productPrice: example.price,
       productImage: example.imageUrl,

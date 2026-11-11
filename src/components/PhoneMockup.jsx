@@ -20,6 +20,7 @@ export default function PhoneMockup({ storeState }) {
   const displayBrand = storeState.brandName.trim() || 'Mi Tienda';
   const displayProduct = storeState.productName.trim() || 'Producto Estrella';
   const displayPrice = storeState.productPrice > 0 ? storeState.productPrice : 0;
+  const themeHex = storeState.themeColor?.hex || '#18181B';
 
   const handleSimulatedBuy = () => {
     setBoughtSuccess(true);
@@ -71,20 +72,34 @@ export default function PhoneMockup({ storeState }) {
           {/* Phone Scrollable Content */}
           <div className="flex-1 overflow-y-auto no-scrollbar bg-gradient-to-b from-white to-slate-50 flex flex-col">
             
-            {/* Store Top Nav */}
-            <div className="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+            {/* Store Top Nav with Dynamic Ownership (Logo & Theme Color) */}
+            <div className="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-white/90 backdrop-blur-sm sticky top-0 z-10 transition-colors">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-brand-600 text-white font-bold text-xs flex items-center justify-center">
-                  {displayBrand.charAt(0).toUpperCase()}
-                </div>
-                <span className="font-bold text-slate-900 text-sm tracking-tight truncate max-w-[150px]">
+                {storeState.brandLogo ? (
+                  <img
+                    src={storeState.brandLogo}
+                    alt={displayBrand}
+                    className="h-7 max-w-[120px] object-contain rounded"
+                  />
+                ) : (
+                  <div
+                    className="w-7 h-7 rounded-lg text-white font-bold text-xs flex items-center justify-center shadow-xs transition-colors"
+                    style={{ backgroundColor: themeHex }}
+                  >
+                    {displayBrand.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <span className="font-bold text-slate-900 text-sm tracking-tight truncate max-w-[140px]">
                   {displayBrand}
                 </span>
               </div>
 
-              <div className="relative p-1.5 text-slate-600 hover:text-brand-600 cursor-pointer">
+              <div className="relative p-1.5 text-slate-600 hover:text-slate-900 cursor-pointer">
                 <ShoppingBag className="w-4 h-4" />
-                <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-brand-600 text-white rounded-full text-[9px] font-bold flex items-center justify-center">
+                <span
+                  className="absolute top-0 right-0 w-3.5 h-3.5 text-white rounded-full text-[9px] font-bold flex items-center justify-center transition-colors"
+                  style={{ backgroundColor: themeHex }}
+                >
                   {cartCount}
                 </span>
               </div>
@@ -100,8 +115,11 @@ export default function PhoneMockup({ storeState }) {
                   alt={displayProduct}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-sm text-[10px] font-bold text-brand-700 shadow-sm border border-slate-100 flex items-center gap-1">
-                  <Sparkles className="w-2.5 h-2.5 text-brand-600" />
+                <div
+                  className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-sm text-[10px] font-bold shadow-xs border border-slate-100 flex items-center gap-1 transition-colors"
+                  style={{ color: themeHex }}
+                >
+                  <Sparkles className="w-2.5 h-2.5" />
                   <span>NUEVO</span>
                 </div>
               </div>
@@ -133,16 +151,13 @@ export default function PhoneMockup({ storeState }) {
                 </div>
               </div>
 
-              {/* Buy Action with Mercado Pago Simulated */}
+              {/* Buy Action with Mercado Pago Styled with User's Chosen Brand Color */}
               <div className="mt-auto pt-2 space-y-2">
                 <button
                   type="button"
                   onClick={handleSimulatedBuy}
-                  className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer ${
-                    boughtSuccess
-                      ? 'bg-emerald-600 text-white shadow-emerald-600/30'
-                      : 'bg-brand-600 hover:bg-brand-700 text-white shadow-brand-600/25 active:scale-95'
-                  }`}
+                  style={{ backgroundColor: boughtSuccess ? '#059669' : themeHex }}
+                  className={`w-full py-3.5 px-4 rounded-xl font-extrabold text-xs text-white flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer hover:opacity-95 active:scale-95`}
                 >
                   {boughtSuccess ? (
                     <>
@@ -151,7 +166,7 @@ export default function PhoneMockup({ storeState }) {
                     </>
                   ) : (
                     <>
-                      <ShoppingBag className="w-4 h-4" />
+                      <ShoppingBag className="w-4 h-4 text-white" />
                       <span>Comprar con Mercado Pago • {formatMXN(displayPrice)}</span>
                     </>
                   )}

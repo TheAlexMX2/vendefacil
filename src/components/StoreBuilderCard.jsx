@@ -13,19 +13,34 @@ import {
   CreditCard,
   Percent,
   ShieldCheck,
-  MessageCircle
+  MessageCircle,
+  X,
+  Palette
 } from 'lucide-react';
 import { slugifyBrand, formatMXN } from '../utils/formatters.js';
-import { PRODUCT_PRESETS } from '../data/presets.js';
+import { PRODUCT_PRESETS, THEME_COLORS } from '../data/presets.js';
 
 export default function StoreBuilderCard({ storeState, setStoreState, onPublishClick }) {
   const fileInputRef = useRef(null);
+  const logoInputRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
 
   const brandSlug = slugifyBrand(storeState.brandName);
 
   const handleBrandChange = (e) => {
     setStoreState((prev) => ({ ...prev, brandName: e.target.value }));
+  };
+
+  const handleLogoUpload = (file) => {
+    if (!file || !file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setStoreState((prev) => ({
+        ...prev,
+        brandLogo: event.target.result,
+      }));
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleProductChange = (e) => {
@@ -65,6 +80,7 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
       productName: preset.productName,
       productPrice: preset.price,
       productImage: preset.imageUrl,
+      themeColor: preset.themeColor || prev.themeColor,
     }));
   };
 
@@ -125,6 +141,75 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
               <Check className="w-3 h-3 stroke-[3]" />
               <span>Disponible</span>
             </span>
+          </div>
+
+          {/* EFECTO OWNERSHIP: Subida de Logo Opcional + Selector de Color Anti-fricción */}
+          <div className="mt-3 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-slate-50/60 p-2.5 rounded-xl border border-slate-200/60">
+            {/* Opcional: Sube tu logo */}
+            <div>
+              <input
+                type="file"
+                ref={logoInputRef}
+                onChange={(e) => e.target.files?.[0] && handleLogoUpload(e.target.files[0])}
+                accept="image/*"
+                className="hidden"
+              />
+              {storeState.brandLogo ? (
+                <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-2 py-1 shadow-xs">
+                  <img
+                    src={storeState.brandLogo}
+                    alt="Logo"
+                    className="w-5 h-5 rounded object-cover"
+                  />
+                  <span className="text-[11px] font-semibold text-slate-700">Logo activo</span>
+                  <button
+                    type="button"
+                    onClick={() => setStoreState((prev) => ({ ...prev, brandLogo: null }))}
+                    className="text-slate-400 hover:text-rose-500 p-0.5 ml-0.5"
+                    title="Eliminar logo"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => logoInputRef.current?.click()}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-dashed border-slate-300 hover:border-brand-500 bg-white hover:bg-brand-50/50 text-[11px] font-semibold text-slate-600 hover:text-brand-700 transition-all cursor-pointer"
+                >
+                  <Upload className="w-3 h-3 text-brand-600" />
+                  <span>Opcional: Sube tu logo</span>
+                </button>
+              )}
+            </div>
+
+            {/* Selector de Color (5-6 círculos anti-fricción) */}
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] font-semibold text-slate-500 flex items-center gap-1">
+                <Palette className="w-3 h-3" />
+                <span>Color:</span>
+              </span>
+              <div className="flex items-center gap-1">
+                {THEME_COLORS.map((col) => {
+                  const isSelected = (storeState.themeColor?.id || 'violet') === col.id;
+                  return (
+                    <button
+                      key={col.id}
+                      type="button"
+                      onClick={() => setStoreState((prev) => ({ ...prev, themeColor: col }))}
+                      title={col.name}
+                      className={`w-5 h-5 rounded-full transition-all cursor-pointer flex items-center justify-center ${col.bgClass} ${
+                        isSelected
+                          ? 'ring-2 ring-offset-2 ring-slate-800 scale-110 shadow-xs'
+                          : 'opacity-80 hover:opacity-100 hover:scale-105'
+                      }`}
+                    >
+                      {isSelected && <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -234,7 +319,7 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
               Precio del Producto (MXN)
             </label>
             <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
-              0% Comisión por Venta
+              0% Comisiones de Plataforma
             </span>
           </div>
           <div className="relative">

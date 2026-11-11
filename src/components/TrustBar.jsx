@@ -10,8 +10,8 @@ export default function TrustBar() {
     },
     {
       icon: ShieldCheck,
-      title: '0% Comisiones por Venta',
-      desc: 'El 100% de tus ventas es tuyo sin cobros extras',
+      title: '0% Comisiones de Plataforma',
+      desc: 'Nosotros no retenemos ni un centavo de tus ventas',
     },
     {
       icon: Lock,
