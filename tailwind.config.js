@@ -8,49 +8,38 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#F5F3FF',
-          100: '#EDE9FE',
-          200: '#DDD6FE',
-          300: '#C4B5FD',
-          400: '#A78BFA',
-          500: '#8B5CF6',
-          600: '#7C3AED', // Primary brand color
-          700: '#6D28D9',
-          800: '#5B21B6',
-          900: '#4C1D95',
-          950: '#2E1065',
+          50: '#EEF6F5',
+          100: '#D6ECEA',
+          200: '#AED9D5',
+          500: '#1D7A77',
+          600: '#156563',
+          700: '#104E4D',
+          800: '#0D3F3E',
+          900: '#0A3130',
         },
-        emerald: {
-          50: '#ECFDF5',
-          100: '#D1FAE5',
-          200: '#A7F3D0',
-          500: '#10B981', // Verified badge / success
-          600: '#059669',
-          700: '#047857',
-        }
+        ground: {
+          DEFAULT: '#F6F4F1',
+          subtle: '#EFECE6',
+          muted: '#E6E2DA',
+        },
+        ink: {
+          DEFAULT: '#14151A',
+          secondary: '#4B4B52',
+          muted: '#6E6D74',
+        },
+        line: {
+          DEFAULT: '#E6E4DF',
+          strong: '#D5D1C9',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
       boxShadow: {
-        'glow-violet': '0 0 25px -5px rgba(124, 58, 237, 0.4)',
-        'phone': '0 25px 60px -15px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08)',
-        'card-hover': '0 20px 30px -10px rgba(124, 58, 237, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)',
+        builder: '0 18px 42px -18px rgba(20, 21, 26, 0.12), 0 2px 6px rgba(20, 21, 26, 0.04)',
+        phone: '0 24px 48px -16px rgba(20, 21, 26, 0.24), 0 4px 12px rgba(20, 21, 26, 0.08)',
+        modal: '0 28px 60px -20px rgba(20, 21, 26, 0.26), 0 4px 16px rgba(20, 21, 26, 0.08)',
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-6px)' },
-        },
-        pulseSubtle: {
-          '0%, 100%': { opacity: 1 },
-          '50%': { opacity: 0.85 },
-        }
-      },
-      animation: {
-        float: 'float 5s ease-in-out infinite',
-        'pulse-subtle': 'pulseSubtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      }
     },
   },
   plugins: [],

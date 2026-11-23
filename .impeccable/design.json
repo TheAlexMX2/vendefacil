@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T02:06:14.081Z",
+  "title": "Design System: VendeFácil",
+  "extensions": {
+    "colorMeta": {
+      "forest-teal": {
+        "role": "primary",
+        "displayName": "Forest Teal",
+        "canonical": "oklch(46.1% 0.0727 192.4)",
+        "tonalRamp": ["#001212", "#002E2D", "#004D4C", "#226D6B", "#478E8B", "#75B1AF", "#A7D5D3", "#D8F5F4"]
+      },
+      "forest-teal-deep": {
+        "role": "primary",
+        "displayName": "Deep Forest Teal",
+        "canonical": "oklch(38.6% 0.0598 193.3)",
+        "tonalRamp": ["#001111", "#022D2D", "#174B4A", "#336B6A", "#548C8A", "#7FAFAE", "#AED3D2", "#DCF4F3"]
+      },
+      "forest-teal-soft": {
+        "role": "primary",
+        "displayName": "Mint-Teal Tint",
+        "canonical": "oklch(96.7% 0.0086 188.1)",
+        "tonalRamp": ["#0B0E0E", "#232727", "#3E4443", "#5B6261", "#7B8281", "#A0A6A5", "#C7CCCB", "#ECEFEF"]
+      },
+      "forest-teal-border": {
+        "role": "primary",
+        "displayName": "Teal Notice Border",
+        "canonical": "oklch(92.6% 0.0234 190.1)",
+        "tonalRamp": ["#070F0E", "#1D2928", "#364645", "#526563", "#718583", "#97A9A7", "#C0CECD", "#E8F1F0"]
+      },
+      "teal-highlight": {
+        "role": "primary",
+        "displayName": "Dark-Surface Teal",
+        "canonical": "oklch(75.8% 0.0967 191.1)",
+        "tonalRamp": ["#001312", "#00312F", "#00504E", "#00716D", "#23928E", "#60B5B1", "#9AD8D4", "#D1F8F5"]
+      },
+      "teal-emblem": {
+        "role": "primary",
+        "displayName": "Emblem Teal",
+        "canonical": "oklch(62.9% 0.0960 191.4)",
+        "tonalRamp": ["#001313", "#00312F", "#00504E", "#00716E", "#24928E", "#61B5B1", "#9AD8D5", "#D1F8F5"]
+      },
+      "warm-stone-ground": {
+        "role": "neutral",
+        "displayName": "Warm Stone Ground",
+        "canonical": "oklch(96.8% 0.0045 78.3)",
+        "tonalRamp": ["#0E0D0C", "#272625", "#444240", "#62605E", "#82807D", "#A6A4A2", "#CBCAC8", "#EFEEED"]
+      },
+      "pure-white": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "oklch(100.0% 0.0000 0)",
+        "tonalRamp": ["#0D0D0D", "#262626", "#424242", "#606060", "#808080", "#A4A4A4", "#CACACA", "#EEEEEE"]
+      },
+      "warm-alabaster": {
+        "role": "neutral",
+        "displayName": "Warm Alabaster",
+        "canonical": "oklch(98.2% 0.0029 84.6)",
+        "tonalRamp": ["#0E0D0D", "#272625", "#434241", "#61605F", "#81807E", "#A5A4A3", "#CBCAC9", "#EFEEED"]
+      },
+      "warm-sand-section": {
+        "role": "neutral",
+        "displayName": "Warm Sand Section",
+        "canonical": "oklch(95.9% 0.0057 84.6)",
+        "tonalRamp": ["#0E0D0C", "#272624", "#44423F", "#62605D", "#82807C", "#A6A4A1", "#CBCAC8", "#EFEEED"]
+      },
+      "warm-paper-subtle": {
+        "role": "neutral",
+        "displayName": "Warm Paper Subtle",
+        "canonical": "oklch(94.4% 0.0086 84.6)",
+        "tonalRamp": ["#0E0D0B", "#282623", "#44423E", "#63605B", "#82807B", "#A7A49F", "#CCCAC6", "#EFEEEC"]
+      },
+      "warm-sand-muted": {
+        "role": "neutral",
+        "displayName": "Warm Sand Muted",
+        "canonical": "oklch(91.4% 0.0116 84.6)",
+        "tonalRamp": ["#0E0D0A", "#282622", "#45423C", "#636059", "#838079", "#A7A49E", "#CDCAC5", "#F0EEEB"]
+      },
+      "stone-hairline": {
+        "role": "neutral",
+        "displayName": "Stone Hairline",
+        "canonical": "oklch(91.9% 0.0071 88.6)",
+        "tonalRamp": ["#0E0D0B", "#272624", "#44423F", "#62605C", "#82807C", "#A6A4A0", "#CCCAC7", "#EFEEEC"]
+      },
+      "stone-border-strong": {
+        "role": "neutral",
+        "displayName": "Strong Stone Border",
+        "canonical": "oklch(86.2% 0.0118 84.6)",
+        "tonalRamp": ["#0E0D0A", "#282622", "#45423C", "#636059", "#838079", "#A7A49E", "#CDCAC5", "#F0EEEB"]
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Input Stroke",
+        "canonical": "oklch(88.6% 0.0100 87.5)",
+        "tonalRamp": ["#0E0D0B", "#282622", "#44423D", "#63605A", "#83807A", "#A7A49F", "#CCCAC6", "#F0EEEB"]
+      },
+      "charcoal-ink": {
+        "role": "neutral",
+        "displayName": "Charcoal Ink",
+        "canonical": "oklch(19.7% 0.0101 276.5)",
+        "tonalRamp": ["#0D0D10", "#25262A", "#414247", "#5F6066", "#7E8086", "#A3A4AA", "#C9CACF", "#EDEEF1"]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Slate Secondary Ink",
+        "canonical": "oklch(41.5% 0.0115 285.9)",
+        "tonalRamp": ["#0D0D10", "#26262B", "#424248", "#606067", "#7F7F87", "#A4A4AB", "#CACACF", "#EEEEF2"]
+      },
+      "ink-ui-body": {
+        "role": "neutral",
+        "displayName": "UI Label Charcoal",
+        "canonical": "oklch(37.0% 0.0119 285.8)",
+        "tonalRamp": ["#0D0D10", "#26262B", "#424248", "#606067", "#7F7F87", "#A4A4AB", "#CACACF", "#EEEEF2"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Muted Stone Ink",
+        "canonical": "oklch(53.8% 0.0108 292.6)",
+        "tonalRamp": ["#0D0D10", "#26262A", "#424147", "#605F66", "#807F86", "#A4A4AA", "#CACACF", "#EEEEF1"]
+      },
+      "footer-ink-light": {
+        "role": "neutral",
+        "displayName": "Footer Light Ink",
+        "canonical": "oklch(86.4% 0.0085 91.5)",
+        "tonalRamp": ["#0E0D0B", "#272623", "#44423E", "#62605B", "#82807B", "#A6A49F", "#CCCAC6", "#EFEEEC"]
+      },
+      "footer-ink-muted": {
+        "role": "neutral",
+        "displayName": "Footer Muted Ink",
+        "canonical": "oklch(72.5% 0.0088 91.5)",
+        "tonalRamp": ["#0E0D0B", "#282623", "#44423E", "#62605B", "#82807A", "#A6A49F", "#CCCAC6", "#EFEEEC"]
+      },
+      "device-bezel": {
+        "role": "neutral",
+        "displayName": "Device Bezel",
+        "canonical": "oklch(20.6% 0.0100 276.5)",
+        "tonalRamp": ["#0D0D10", "#25262A", "#414247", "#5F6066", "#7E8086", "#A3A4AA", "#C9CACF", "#EEEEF1"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline above the live store workbench (26px mobile / 40px sm / 45px lg, balanced wrap)." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings across HowItWorks, Pricing, and StoreExamples (30px mobile / 36px sm+); Pricing figure $99 steps up to 52px tabular-nums." },
+      "title": { "displayName": "Title", "purpose": "Editable brand heading (20px), modal headings (20px–22px), and step/example card titles (18px)." },
+      "body": { "displayName": "Body", "purpose": "Section leads (16px), hero subtitle (18.5px), feature checklist copy (14.5px), and navigation/modal UI prose (13.5px–14px)." },
+      "label": { "displayName": "Label", "purpose": "Form labels (12px–12.5px), subdomain indicators (12px), TrustBar items (13.5px), and 0.06em uppercase column/list subheaders (12px)." }
+    },
+    "shadows": [
+      {
+        "name": "builder",
+        "value": "0 18px 42px -18px rgba(20, 21, 26, 0.12), 0 2px 6px rgba(20, 21, 26, 0.04)",
+        "purpose": "Lifts the StoreBuilderCard interactive workbench cleanly off the #F6F4F1 warm stone ground."
+      },
+      {
+        "name": "phone",
+        "value": "0 24px 48px -16px rgba(20, 21, 26, 0.24), 0 4px 12px rgba(20, 21, 26, 0.08)",
+        "purpose": "Anchors the dark-bezel PhoneMockup frame as a tangible handheld object beside the builder."
+      },
+      {
+        "name": "modal",
+        "value": "0 28px 60px -20px rgba(20, 21, 26, 0.26), 0 4px 16px rgba(20, 21, 26, 0.08)",
+        "purpose": "Elevates PublishModal, LoginModal, legal dialogs, and the confirmation toast above backdrop overlays."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Exponential ease-out curve for builder step transitions, swatch scales, upload zones, and CTA state shifts."
+      },
+      {
+        "name": "duration-ui",
+        "value": "200ms",
+        "purpose": "Standard responsive transition timing for interactive buttons, tabs, borders, and swatches."
+      },
+      {
+        "name": "duration-feedback",
+        "value": "300ms",
+        "purpose": "State confirmation timing for the simulated Mercado Pago button transition inside PhoneMockup."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Global @media (prefers-reduced-motion: reduce) clamp disabling smooth scroll and transition/animation durations."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container-max", "value": "1240px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary conversion CTA used in Header, StoreBuilderCard, Pricing, and modals.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\"><span>Publicar esta tienda por $99 MXN/mes</span><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { font-family: Figtree, system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 10px 16px; background-color: var(--accent, #156563); color: #FFFFFF; font-size: 13.5px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background-color: var(--accent-hover, #104E4D); } .ds-btn-primary:active { transform: scale(0.99); } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent, #156563); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hairline-bordered action button used on demo store cards, toggling to solid teal when loaded.",
+      "html": "<div style=\"display:flex;gap:12px;flex-wrap:wrap;\"><button type=\"button\" class=\"ds-btn-secondary\"><span>Probar en el editor</span><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></button><button type=\"button\" class=\"ds-btn-secondary ds-btn-secondary--active\"><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><span>Cargado en el editor</span></button></div>",
+      "css": ".ds-btn-secondary { font-family: Figtree, system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 14px; background-color: var(--bg-surface, #FFFFFF); color: var(--ink-primary, #14151A); font-size: 13px; font-weight: 600; border: 1px solid #D5D1C9; border-radius: 8px; cursor: pointer; transition: border-color 200ms cubic-bezier(0.16, 1, 0.3, 1), background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { border-color: var(--ink-primary, #14151A); } .ds-btn-secondary--active { background-color: var(--accent, #156563); color: #FFFFFF; border-color: var(--accent, #156563); } .ds-btn-secondary--active:hover { border-color: var(--accent-hover, #104E4D); background-color: var(--accent-hover, #104E4D); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--accent, #156563); outline-offset: 2px; }"
+    },
+    {
+      "name": "Step Rail Tab",
+      "kind": "chip",
+      "refersTo": "step-tab",
+      "description": "4-step vertical rail tab inside StoreBuilderCard connecting form focus with numbered badges.",
+      "html": "<div class=\"ds-step-list\" role=\"tablist\" aria-label=\"Pasos\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" class=\"ds-step-tab ds-step-tab--active\"><span class=\"ds-step-num\">1</span><span>Tu marca</span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" class=\"ds-step-tab\"><span class=\"ds-step-num\">2</span><span>Apariencia</span></button></div>",
+      "css": ".ds-step-list { display: flex; flex-direction: column; gap: 6px; width: 168px; padding: 12px 14px; background-color: #FAF9F7; border: 1px solid #ECEAE4; border-radius: 10px; font-family: Figtree, system-ui, sans-serif; } .ds-step-tab { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: none; border-radius: 8px; background: transparent; color: #52525B; font-size: 13px; font-weight: 500; text-align: left; cursor: pointer; transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-step-tab:hover { background-color: #F2F0EC; color: var(--ink-primary, #14151A); } .ds-step-tab--active { background-color: #EEF5F4; color: var(--ink-primary, #14151A); font-weight: 600; } .ds-step-num { width: 20px; height: 20px; border-radius: 9999px; background-color: #E5E3DD; color: #52525B; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-step-tab--active .ds-step-num { background-color: var(--accent, #156563); color: #FFFFFF; } .ds-step-tab:focus-visible { outline: 2px solid var(--accent, #156563); outline-offset: 2px; }"
+    },
+    {
+      "name": "Text & MXN Price Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Boxed product and MXN numeric inputs with inline currency suffix and tabular numerals.",
+      "html": "<div class=\"ds-field-group\"><label for=\"ds-price\" class=\"ds-field-label\">Precio</label><div class=\"ds-price-wrap\"><span class=\"ds-price-prefix\">$</span><input id=\"ds-price\" type=\"text\" inputmode=\"numeric\" value=\"280\" class=\"ds-input ds-input--price\" /><span class=\"ds-price-suffix\">MXN</span></div></div>",
+      "css": ".ds-field-group { font-family: Figtree, system-ui, sans-serif; max-width: 320px; } .ds-field-label { display: block; font-size: 12px; font-weight: 500; color: #3F3F46; margin-bottom: 4px; } .ds-price-wrap { position: relative; display: flex; align-items: center; } .ds-price-prefix { position: absolute; left: 12px; font-size: 13.5px; font-weight: 500; color: #52525B; pointer-events: none; } .ds-price-suffix { position: absolute; right: 12px; font-size: 12px; font-weight: 500; color: var(--ink-muted, #6E6D74); pointer-events: none; } .ds-input { width: 100%; padding: 6px 12px; background-color: var(--bg-surface, #FFFFFF); color: var(--ink-primary, #14151A); font-family: inherit; font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; border: 1px solid #DCD9D2; border-radius: 8px; caret-color: var(--accent, #156563); transition: border-color 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-input--price { padding-left: 24px; padding-right: 48px; } .ds-input:focus, .ds-input:focus-visible { outline: none; border-color: var(--accent, #156563); box-shadow: 0 0 0 2px rgba(21, 101, 99, 0.15); }"
+    },
+    {
+      "name": "Sticky Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Single-row warm-stone header bar with VendeFácil geometric monogram, section links, and primary CTA.",
+      "html": "<header class=\"ds-nav\"><div class=\"ds-nav-inner\"><a href=\"#\" class=\"ds-brand\"><span class=\"ds-brand-mark\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M6 7.5L11.4 17.5H12.6L18 7.5\" stroke=\"#FFFFFF\" stroke-width=\"2.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M15.2 9.8L18.2 7.5\" stroke=\"#2D9B97\" stroke-width=\"2.3\" stroke-linecap=\"round\"/></svg></span><span class=\"ds-brand-word\">VendeFácil</span></a><nav class=\"ds-nav-links\" aria-label=\"Principal\"><a href=\"#como-funciona\" class=\"ds-nav-link\">Cómo funciona</a><a href=\"#precios\" class=\"ds-nav-link\">Precios</a><a href=\"#ejemplos\" class=\"ds-nav-link\">Ejemplos</a><a href=\"#creador\" class=\"ds-nav-cta\">Crear mi tienda</a></nav></div></header>",
+      "css": ".ds-nav { font-family: Figtree, system-ui, sans-serif; width: 100%; background-color: rgba(246, 244, 241, 0.95); backdrop-filter: blur(4px); border-bottom: 1px solid var(--border-subtle, #E6E4DF); } .ds-nav-inner { max-width: 1240px; height: 60px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; } .ds-brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; border-radius: 8px; } .ds-brand:focus-visible { outline: 2px solid var(--accent, #156563); outline-offset: 2px; } .ds-brand-mark { width: 32px; height: 32px; border-radius: 8px; background-color: var(--ink-primary, #14151A); display: inline-flex; align-items: center; justify-content: center; } .ds-brand-word { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink-primary, #14151A); } .ds-nav-links { display: flex; align-items: center; gap: 24px; } .ds-nav-link { font-size: 14px; font-weight: 500; color: #3F3F46; text-decoration: none; transition: color 200ms ease; } .ds-nav-link:hover { color: var(--ink-primary, #14151A); } .ds-nav-link:focus-visible { outline: 2px solid var(--accent, #156563); outline-offset: 2px; border-radius: 4px; } .ds-nav-cta { display: inline-flex; align-items: center; padding: 8px 16px; background-color: var(--accent, #156563); color: #FFFFFF; font-size: 14px; font-weight: 600; border-radius: 8px; text-decoration: none; transition: background-color 200ms ease; } .ds-nav-cta:hover { background-color: var(--accent-hover, #104E4D); }"
+    },
+    {
+      "name": "Store Builder Workbench Card",
+      "kind": "card",
+      "refersTo": "card-builder",
+      "description": "Elevated split workbench card pairing the 4-step rail with brand, theme swatches, product, and MXN price fields.",
+      "html": "<div class=\"ds-builder-card\"><div class=\"ds-builder-rail\"><div class=\"ds-builder-pill ds-builder-pill--active\"><span>1</span> Tu marca</div><div class=\"ds-builder-pill\"><span>2</span> Apariencia</div><div class=\"ds-builder-pill\"><span>3</span> Producto</div><div class=\"ds-builder-pill\"><span>4</span> Publicar</div></div><div class=\"ds-builder-body\"><div class=\"ds-builder-title\">Café Don Pedro</div><div class=\"ds-builder-slug\">cafedonpedro.vendefacil.online · <span class=\"ds-builder-avail\">Disponible</span></div><div class=\"ds-builder-swatches\"><span class=\"ds-swatch ds-swatch--active\" style=\"background:#156563\"></span><span class=\"ds-swatch\" style=\"background:#1C2434\"></span><span class=\"ds-swatch\" style=\"background:#147A5C\"></span><span class=\"ds-swatch\" style=\"background:#E8E2D8;border-color:#D5CFC4\"></span></div><button type=\"button\" class=\"ds-builder-cta\">Publicar esta tienda por $99 MXN/mes</button></div></div>",
+      "css": ".ds-builder-card { font-family: Figtree, system-ui, sans-serif; display: flex; max-width: 604px; background-color: var(--bg-surface, #FFFFFF); border: 1px solid var(--border-subtle, #E6E4DF); border-radius: 16px; overflow: hidden; box-shadow: 0 18px 42px -18px rgba(20, 21, 26, 0.12), 0 2px 6px rgba(20, 21, 26, 0.04); } .ds-builder-rail { width: 158px; background-color: #FAF9F7; border-right: 1px solid #ECEAE4; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; } .ds-builder-pill { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; font-size: 12.5px; font-weight: 500; color: #52525B; } .ds-builder-pill span { width: 18px; height: 18px; border-radius: 9999px; background: #E5E3DD; color: #52525B; font-size: 10.5px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; } .ds-builder-pill--active { background-color: #EEF5F4; color: var(--ink-primary, #14151A); font-weight: 600; } .ds-builder-pill--active span { background-color: var(--accent, #156563); color: #FFFFFF; } .ds-builder-body { flex: 1; padding: 18px 22px; display: flex; flex-direction: column; gap: 12px; } .ds-builder-title { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; color: var(--ink-primary, #14151A); border-bottom: 1px solid #D5D1C9; padding-bottom: 3px; } .ds-builder-slug { font-size: 12px; font-weight: 500; color: #52525B; } .ds-builder-avail { color: var(--accent, #156563); font-weight: 600; } .ds-builder-swatches { display: flex; align-items: center; gap: 8px; padding: 4px 0; } .ds-swatch { width: 24px; height: 24px; border-radius: 9999px; border: 1px solid transparent; display: inline-block; } .ds-swatch--active { box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #14151A; } .ds-builder-cta { width: 100%; padding: 10px 16px; background-color: var(--accent, #156563); color: #FFFFFF; font-size: 13.5px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; } .ds-builder-cta:hover { background-color: var(--accent-hover, #104E4D); }"
+    },
+    {
+      "name": "Plan Lite Pricing Card",
+      "kind": "card",
+      "refersTo": "card-pricing",
+      "description": "Flat 1px-bordered split pricing card contrasting #FAF9F7 offer summary with #FFFFFF feature ledger.",
+      "html": "<div class=\"ds-pricing-card\"><div class=\"ds-pricing-left\"><div class=\"ds-pricing-name\">Plan Lite</div><div class=\"ds-pricing-sub\">Todo lo necesario para lanzar y cobrar en línea hoy.</div><div class=\"ds-pricing-fig\"><span class=\"ds-pricing-amt\">$99</span><span class=\"ds-pricing-unit\">MXN / mes</span></div><button type=\"button\" class=\"ds-pricing-btn\">Comenzar ahora por $99 MXN</button></div><div class=\"ds-pricing-right\"><div class=\"ds-pricing-hdr\">Incluido desde el primer minuto</div><ul class=\"ds-pricing-list\"><li>0% de comisiones de plataforma sobre tus ventas</li><li>Integración directa con Mercado Pago</li></ul></div></div>",
+      "css": ".ds-pricing-card { font-family: Figtree, system-ui, sans-serif; display: grid; grid-template-columns: 5fr 7fr; max-width: 680px; background-color: var(--bg-surface, #FFFFFF); border: 1px solid var(--border-subtle, #E6E4DF); border-radius: 16px; overflow: hidden; } .ds-pricing-left { padding: 28px; background-color: #FAF9F7; border-right: 1px solid var(--border-subtle, #E6E4DF); } .ds-pricing-name { font-size: 20px; font-weight: 700; color: var(--ink-primary, #14151A); } .ds-pricing-sub { margin-top: 4px; font-size: 13.5px; color: var(--ink-secondary, #4B4B52); } .ds-pricing-fig { margin-top: 18px; display: flex; align-items: baseline; gap: 6px; } .ds-pricing-amt { font-size: 46px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--ink-primary, #14151A); } .ds-pricing-unit { font-size: 15px; font-weight: 500; color: #52525B; } .ds-pricing-btn { margin-top: 20px; width: 100%; padding: 12px 16px; background-color: var(--accent, #156563); color: #FFFFFF; font-size: 14px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; } .ds-pricing-btn:hover { background-color: var(--accent-hover, #104E4D); } .ds-pricing-right { padding: 28px; } .ds-pricing-hdr { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted, #6E6D74); margin-bottom: 12px; } .ds-pricing-list { list-style: none; padding: 0; margin: 0; } .ds-pricing-list li { padding: 10px 0; font-size: 14px; color: var(--ink-primary, #14151A); border-bottom: 1px solid #F0EEE9; } .ds-pricing-list li:last-child { border-bottom: none; }"
+    },
+    {
+      "name": "Live Smartphone Storefront Frame",
+      "kind": "custom",
+      "refersTo": "phone-mockup",
+      "description": "Handheld #16171C mobile bezel displaying the merchant's live storefront banner, products, and Mercado Pago button.",
+      "html": "<div class=\"ds-phone\"><div class=\"ds-phone-screen\"><div class=\"ds-phone-notch-wrap\"><div class=\"ds-phone-notch\"></div></div><div class=\"ds-phone-hdr\"><span>Café Don Pedro</span><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#14151A\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\"/><path d=\"M3 6h18\"/><path d=\"M16 10a4 4 0 0 1-8 0\"/></svg></div><div class=\"ds-phone-hero\"><span>Café Don Pedro</span></div><div class=\"ds-phone-body\"><div class=\"ds-phone-cat\">Café de Especialidad</div><div class=\"ds-phone-grid\"><div class=\"ds-phone-item\"><div class=\"ds-phone-thumb\"></div><div class=\"ds-phone-item-name\">Café de Especialidad 500g</div><div class=\"ds-phone-item-price\">$280 MXN</div></div><div class=\"ds-phone-item\"><div class=\"ds-phone-thumb\"></div><div class=\"ds-phone-item-name\">Café de Altura 500g</div><div class=\"ds-phone-item-price\">$280 MXN</div></div></div><button type=\"button\" class=\"ds-phone-buy\">Comprar con Mercado Pago</button></div></div></div>",
+      "css": ".ds-phone { font-family: Figtree, system-ui, sans-serif; width: 258px; background-color: #16171C; border-radius: 34px; padding: 7px; border: 1px solid #2D2F38; box-shadow: 0 24px 48px -16px rgba(20, 21, 26, 0.24), 0 4px 12px rgba(20, 21, 26, 0.08); } .ds-phone-screen { background-color: #FFFFFF; border-radius: 28px; overflow: hidden; } .ds-phone-notch-wrap { padding: 6px 0 4px; display: flex; justify-content: center; background: #FFFFFF; } .ds-phone-notch { width: 70px; height: 14px; background-color: #16171C; border-radius: 9999px; } .ds-phone-hdr { padding: 6px 12px; border-bottom: 1px solid #EFECE6; display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--ink-primary, #14151A); } .ds-phone-hero { height: 96px; background: linear-gradient(rgba(20,21,26,0.55), rgba(20,21,26,0.55)), #4A382E; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 15px; font-weight: 600; } .ds-phone-body { padding: 10px; } .ds-phone-cat { font-size: 11.5px; font-weight: 700; color: var(--ink-primary, #14151A); margin-bottom: 6px; } .ds-phone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .ds-phone-thumb { aspect-ratio: 1 / 1; border-radius: 8px; background: #F3F1ED; border: 1px solid #ECEAE4; } .ds-phone-item-name { margin-top: 4px; font-size: 10px; font-weight: 500; color: var(--ink-primary, #14151A); line-height: 1.25; } .ds-phone-item-price { margin-top: 2px; font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink-primary, #14151A); } .ds-phone-buy { margin-top: 8px; width: 100%; padding: 8px 10px; background-color: var(--accent, #156563); color: #FFFFFF; font-size: 11px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: background-color 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-phone-buy:hover { background-color: #147A5C; }"
+    },
+    {
+      "name": "Confirmation Toast",
+      "kind": "custom",
+      "refersTo": "toast-banner",
+      "description": "High-contrast dark status banner confirming that a sample store preset was loaded into the builder.",
+      "html": "<div role=\"status\" class=\"ds-toast\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"#5CC4BF\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><span>Tienda “Café Don Pedro” cargada en el editor.</span></div>",
+      "css": ".ds-toast { font-family: Figtree, system-ui, sans-serif; display: inline-flex; align-items: center; gap: 10px; background-color: var(--ink-primary, #14151A); color: #FFFFFF; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px; font-weight: 500; box-shadow: 0 28px 60px -20px rgba(20, 21, 26, 0.26), 0 4px 16px rgba(20, 21, 26, 0.08); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Grounded Commerce Workbench",
+    "overview": "VendeFácil's visual system translates the *Estándar E-Commerce Moderno* direction (`seed:41262e3186daad91`, approved decision comp `.impeccable/mocks/decision/canon.png`) into a calm, tangible storefront workbench built for independent Mexican makers and micro-merchants. Rather than asking visitors to read marketing claims first, the system treats the interactive editor and live mobile storefront as the primary proof above the fold—grounding digital commerce in tactile warm-stone paper tones, crisp 1px borders, and straightforward Mexican Spanish copy.\n\nWhile the direction brief initially sketched cooler stone-slate defaults (`#FAFAF9` / `#111827` / `#0F766E`), the shipped build intentionally anchors on a warmer paper ground (`#F6F4F1`), deeper charcoal ink (`#14151A`), and rich forest teal (`#156563`) paired with self-hosted `Figtree` variable typography. Depth is earned structurally through surface alternation and hairline rules, reserving soft charcoal-tinted elevation strictly for the interactive builder card, handheld smartphone frame, toast banner, and modal dialogs.\n\nThe system enforces a clear visual rejection of generic AI-SaaS tropes: zero purple or violet gradients, zero neon glow halos, zero dark-mode glassmorphism cards, zero eyebrows or kickers above headings, and zero fabricated merchant counts or fake customer testimonials. Illustrative storefront presets use real studio photography labeled transparently as live interactive demos (`Ejemplos interactivos de muestra`).",
+    "keyCharacteristics": [
+      "Warm stone-paper canvas (`#F6F4F1`) alternating cleanly with pure white (`#FFFFFF`) and warm sand (`#F3F1ED`) bands",
+      "Single disciplined forest-teal action accent (`#156563`) reserved for conversion CTAs, active step/selection states, and focus signals",
+      "Self-hosted `Figtree` sans-serif across every scale with `tabular-nums` locking all MXN prices and step indices",
+      "Side-by-side live workbench pairing a 4-step editor card (`604px`) with a live dark-bezel smartphone preview (`258px`) in the opening viewport",
+      "Honest interactive demo labeling and zero synthetic social-proof claims"
+    ],
+    "rules": [
+      {
+        "name": "The Single-Accent Discipline Rule",
+        "body": "Forest teal (`#156563`) is reserved exclusively for primary conversion CTAs, active step or selection states, inline action links, and system focus/caret signals—never decorative backgrounds or competing secondary hues.",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm Stone Separation Rule",
+        "body": "Adjacent bands alternate deliberately across `#F6F4F1`, `#FFFFFF`, and `#F3F1ED` bounded by 1px `#E6E4DF` hairlines so sections separate clearly without cool-gray sterility or heavy shadows.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular MXN Rule",
+        "body": "Every currency value (`$99`, `$280 MXN`), step badge (`1`–`4`), and cart counter applies `font-variant-numeric: tabular-nums` so typing into live price inputs never causes layout jitter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Kicker-Free Heading Rule",
+        "body": "Hero and section headings (`h1`, `h2`, `h3`) carry their own hierarchy directly—never place uppercase eyebrow or kicker labels above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline-First Rule",
+        "body": "Content sections, pricing modules, and example cards rely on 1px `#E6E4DF` borders and surface alternation rather than drop shadows—avoid stacking shadowed cards inside shadowed containers.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Grounded Shadow Rule",
+        "body": "Every elevated shadow derives from low-opacity warm charcoal (`rgba(20, 21, 26, ...)`) with negative spread—never colored glow halos or zero-blur offset blocks.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the primary interactive builder (`#creador`) and live `PhoneMockup` preview paired side-by-side above the fold so merchants experience the `$99 MXN/mes` product before scrolling.",
+      "Do apply `font-variant-numeric: tabular-nums` to all MXN currency amounts, step badges, and live cart counters.",
+      "Do label sample storefronts (`Café Don Pedro`, `Aura Moda`, `Lumina Studio`) explicitly as interactive live demos (`Ejemplos interactivos de muestra`), retaining clear local photography provenance (`assets/plates/`, `assets/stores/`).",
+      "Do preserve `::selection`, `caret-color`, `:focus-visible` (`2px solid #156563`), modal Escape/backdrop handlers, and global `@media (prefers-reduced-motion: reduce)` overrides.",
+      "Do reserve forest teal (`#156563`) strictly for primary conversion actions, active states, action links, and system focus cues."
+    ],
+    "donts": [
+      "Don't introduce purple/violet gradients, glowing neon halos, dark-mode glassmorphism, or hard neobrutalist offset shadows—they violate the *Estándar E-Commerce Moderno* identity.",
+      "Don't place uppercase eyebrow or kicker labels above hero or section headings.",
+      "Don't fabricate merchant counts, testimonials, uptime claims, or press logos; present only verified `$99 MXN/mes` Plan Lite facts and honest interactive examples.",
+      "Don't apply `JetBrains Mono` or decorative monospace typography to UI labels or copy; use `Figtree` with `tabular-nums` for aligned numbers.",
+      "Don't suppress `:focus-visible` outlines on links or bottom-bordered inputs without supplying an equally visible `#156563` focus ring, and don't use low-contrast `#9A9891` placeholder text on white inputs."
+    ]
+  }
+}

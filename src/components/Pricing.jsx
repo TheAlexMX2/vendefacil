@@ -1,128 +1,91 @@
 import React from 'react';
-import { 
-  Check, 
-  Sparkles, 
-  ArrowRight, 
-  ShieldCheck, 
-  HelpCircle, 
-  Globe, 
-  Zap,
-  Image,
-  CreditCard,
-  Percent
-} from 'lucide-react';
+import { Check, ArrowRight, Globe } from 'lucide-react';
 
 export default function Pricing({ onPublishClick }) {
   const features = [
-    { text: 'Subdominio gratuito e inmediato (tu-marca.vendefacil.online)', strong: true },
-    { text: 'Catálogo de hasta 10 productos estrella (ideal para comenzar)', strong: true },
-    { text: 'Almacenamiento de imágenes optimizado (WebP & CDN de alta velocidad)', strong: false },
-    { text: 'Integración directa con Mercado Pago (el dinero va directo a tu cuenta)', strong: true },
-    { text: 'Sin comisiones por usar VendeFácil. Todo el dinero va directo a tu cuenta de Mercado Pago.', strong: true },
-    { text: 'Notificaciones automáticas de nuevos pedidos por WhatsApp', strong: false },
-    { text: 'Certificado de seguridad SSL (https) para máxima confianza', strong: false },
-    { text: 'Panel de control intuitivo optimizado para celular y laptop', strong: false },
+    'Subdominio gratuito e inmediato (tu-marca.vendefacil.online)',
+    'Catálogo de hasta 10 productos estrella listo para redes sociales',
+    'Almacenamiento de imágenes optimizado automáticamente en WebP',
+    'Integración directa con Mercado Pago (tarjeta, OXXO y transferencia)',
+    '0% de comisiones de plataforma sobre tus ventas',
+    'Notificaciones automáticas de nuevos pedidos por WhatsApp',
+    'Certificado de seguridad SSL (HTTPS) incluido',
+    'Panel de control claro desde celular o computadora',
   ];
 
   return (
-    <section id="precios" className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      {/* Decorative background blurs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-brand-50 rounded-full blur-3xl pointer-events-none -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold mb-3 border border-emerald-100">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Precios 100% Transparentes</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Un Solo Plan. Todo Incluido. Sin Letras Chiquitas.
+    <section id="precios" className="py-20 lg:py-24 bg-[#F3F1ED]">
+      <div className="max-w-[1040px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[580px] mb-12">
+          <h2 className="text-[30px] sm:text-[36px] font-bold tracking-[-0.025em] leading-[1.15] text-[#14151A]">
+            Un solo plan. Sin letras chiquitas.
           </h2>
-          <p className="text-base sm:text-lg text-slate-600">
-            Comienza a vender hoy por una fracción de lo que cuesta un café. Sin contratos forzosos.
+          <p className="mt-3 text-[16px] text-[#4B4B52] leading-relaxed">
+            Pagas una cuota mensual fija y conservas el 100% de tus ventas directo en tu cuenta de Mercado Pago.
           </p>
         </div>
 
-        {/* Single Column Pricing Card */}
-        <div className="max-w-xl mx-auto">
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-brand-500/80 shadow-2xl shadow-brand-500/10 relative overflow-hidden">
-            
-            {/* Top Badge */}
-            <div className="absolute top-0 right-0 bg-gradient-to-l from-brand-600 to-brand-700 text-white font-bold text-xs px-5 py-1.5 rounded-bl-2xl tracking-wide uppercase flex items-center gap-1 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>PLAN LITE • MÁS POPULAR</span>
-            </div>
-
-            {/* Plan Info & Price */}
-            <div className="mb-8 pt-2">
-              <h3 className="text-2xl font-extrabold text-slate-900">Plan Lite</h3>
-              <p className="text-slate-500 text-sm mt-1">
-                Todo lo que necesitas para lanzar y validar tu tienda en línea hoy.
+        <div className="bg-white rounded-2xl border border-[#E6E4DF] overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-5 p-8 sm:p-10 bg-[#FAF9F7] border-b lg:border-b-0 lg:border-r border-[#E6E4DF] flex flex-col justify-between">
+            <div>
+              <h3 className="text-[20px] font-bold text-[#14151A]">Plan Lite</h3>
+              <p className="mt-1 text-[14px] text-[#4B4B52]">
+                Todo lo necesario para lanzar y cobrar en línea hoy.
               </p>
 
-              <div className="mt-6 flex flex-wrap items-baseline gap-2">
-                <span className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tight font-mono">
+              <div className="mt-6 flex items-baseline gap-1.5">
+                <span className="text-[52px] font-bold tracking-[-0.03em] leading-none text-[#14151A] tabular-nums">
                   $99
                 </span>
-                <span className="text-xl font-bold text-slate-500">MXN</span>
-                <span className="text-sm font-medium text-slate-400">/ mes</span>
-                
-                {/* Friction-reduction Badge */}
-                <div className="w-full mt-2">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/70">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Cancela cuando quieras con 1 clic • Sin plazos forzosos</span>
-                  </span>
-                </div>
+                <span className="text-[16px] font-medium text-[#52525B]">
+                  MXN / mes
+                </span>
               </div>
-            </div>
 
-            {/* Features List */}
-            <div className="space-y-3.5 mb-8 pb-8 border-b border-slate-100">
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
-                Lo que obtienes inmediatamente:
+              <p className="mt-4 text-[13.5px] text-[#4B4B52]">
+                Cancela cuando quieras con un clic. Sin contratos forzosos.
               </p>
-              {features.map((feat, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-sm">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 stroke-[2.5]" />
-                  </div>
-                  <span className={feat.strong ? 'text-slate-900 font-semibold' : 'text-slate-600'}>
-                    {feat.text}
-                  </span>
-                </div>
+
+              <button
+                type="button"
+                onClick={onPublishClick}
+                className="mt-7 w-full py-3.5 px-5 bg-[#156563] hover:bg-[#104E4D] text-white text-[15px] font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Comenzar ahora por $99 MXN</span>
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="mt-8 pt-5 border-t border-[#E6E4DF] flex items-start gap-2.5 text-[12.5px] text-[#52525B] leading-relaxed">
+              <Globe className="w-4 h-4 text-[#156563] shrink-0 mt-0.5" aria-hidden="true" />
+              <p>
+                <strong className="font-semibold text-[#14151A]">
+                  ¿Quieres tu propio dominio .com?
+                </strong>{' '}
+                Cómpralo desde tu panel o conecta el que ya tienes cuando estés listo.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 p-8 sm:p-10">
+            <h4 className="text-[12px] font-semibold uppercase tracking-[0.06em] text-[#6E6D74] mb-4">
+              Incluido desde el primer minuto
+            </h4>
+
+            <ul className="divide-y divide-[#F0EEE9]">
+              {features.map((feat) => (
+                <li key={feat} className="py-3 flex items-start gap-3 text-[14.5px] text-[#14151A]">
+                  <Check
+                    className="w-4 h-4 text-[#156563] shrink-0 mt-1"
+                    strokeWidth={2.25}
+                    aria-hidden="true"
+                  />
+                  <span>{feat}</span>
+                </li>
               ))}
-            </div>
-
-            {/* Dominio personalizado sin riesgo de precio fijo (Opción B) */}
-            <div className="mb-8 p-4 rounded-2xl bg-slate-50 border border-dashed border-slate-300 flex items-start gap-3">
-              <Globe className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
-              <div className="text-xs text-slate-600">
-                <strong className="text-slate-900 font-bold block mb-0.5">
-                  ¿Ya tienes o quieres tu propio dominio .com?
-                </strong>
-                Cómpralo directamente desde tu panel o conecta el tuyo gratis cuando estés listo.
-              </div>
-            </div>
-
-            {/* CTA Button with High-Contrast Emerald Green */}
-            <button
-              onClick={onPublishClick}
-              className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-500 active:scale-[0.99] text-white font-extrabold text-base sm:text-lg rounded-2xl shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/40 transition-all flex items-center justify-center gap-2.5 group cursor-pointer"
-            >
-              <span>Comenzar ahora por $99 MXN</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-            </button>
-
-            <p className="mt-3 text-center text-xs text-slate-400">
-              Activación instantánea en menos de 2 minutos • Soporte en español
-            </p>
-
+            </ul>
           </div>
         </div>
-
       </div>
     </section>
   );

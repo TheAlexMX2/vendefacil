@@ -1,51 +1,116 @@
+import phoneHeroPhoto from '../../assets/plates/phone-hero-photo.png';
+import phoneProduct1Photo from '../../assets/plates/phone-product-1-photo.png';
+import phoneProduct2Photo from '../../assets/plates/phone-product-2-photo.png';
+import presetThumb1 from '../../assets/plates/preset-thumb-1.png';
+import presetThumb2 from '../../assets/plates/preset-thumb-2.png';
+import presetThumb3 from '../../assets/plates/preset-thumb-3.png';
+import presetThumb4 from '../../assets/plates/preset-thumb-4.png';
+import auraModaPhoto from '../../assets/stores/aura-moda.png';
+import luminaStudioPhoto from '../../assets/stores/lumina-studio.png';
+
 export const THEME_COLORS = [
-  { id: 'black', name: 'Negro elegante', hex: '#18181B', bgClass: 'bg-zinc-900', borderClass: 'border-zinc-900', shadowClass: 'shadow-zinc-900/30' },
-  { id: 'blue', name: 'Azul confianza', hex: '#2563EB', bgClass: 'bg-blue-600', borderClass: 'border-blue-600', shadowClass: 'shadow-blue-600/30' },
-  { id: 'emerald', name: 'Verde esmeralda', hex: '#059669', bgClass: 'bg-emerald-600', borderClass: 'border-emerald-600', shadowClass: 'shadow-emerald-600/30' },
-  { id: 'pink', name: 'Rosa chic', hex: '#EC4899', bgClass: 'bg-pink-500', borderClass: 'border-pink-500', shadowClass: 'shadow-pink-500/30' },
-  { id: 'orange', name: 'Naranja vibrante', hex: '#EA580C', bgClass: 'bg-orange-600', borderClass: 'border-orange-600', shadowClass: 'shadow-orange-600/30' },
-  { id: 'violet', name: 'Violeta moderno', hex: '#7C3AED', bgClass: 'bg-brand-600', borderClass: 'border-brand-600', shadowClass: 'shadow-brand-600/30' },
+  { id: 'pine', name: 'Verde pino', hex: '#156563', textHex: '#FFFFFF' },
+  { id: 'ink', name: 'Marino tinta', hex: '#1C2434', textHex: '#FFFFFF' },
+  { id: 'emerald', name: 'Verde bosque', hex: '#147A5C', textHex: '#FFFFFF' },
+  { id: 'sand', name: 'Piedra cálida', hex: '#E8E2D8', textHex: '#14151A', borderHex: '#D5CFC4' },
+  { id: 'slate', name: 'Azul pizarra', hex: '#3B627E', textHex: '#FFFFFF' },
+  { id: 'espresso', name: 'Café tostado', hex: '#6B4B3A', textHex: '#FFFFFF' },
+];
+
+export const PHOTO_PRESETS = [
+  {
+    id: 'preset-bag',
+    label: 'Bolsa de café 500g',
+    imageUrl: presetThumb1,
+    previewImageUrl: phoneProduct1Photo,
+    productName: 'Café de Especialidad 500g',
+    price: 280,
+  },
+  {
+    id: 'preset-beans',
+    label: 'Grano tostado de altura',
+    imageUrl: presetThumb2,
+    previewImageUrl: phoneProduct2Photo,
+    productName: 'Café de Altura 500g',
+    price: 280,
+  },
+  {
+    id: 'preset-iced',
+    label: 'Bebida fría artesanal',
+    imageUrl: presetThumb3,
+    previewImageUrl: presetThumb3,
+    productName: 'Cold Brew de Olla 355ml',
+    price: 195,
+  },
+  {
+    id: 'preset-pastry',
+    label: 'Repostería y caja regalo',
+    imageUrl: presetThumb4,
+    previewImageUrl: presetThumb4,
+    productName: 'Caja Desayuno & Café',
+    price: 340,
+  },
 ];
 
 export const PRODUCT_PRESETS = [
   {
-    id: 'cafe',
+    id: 'cafedonpedro',
     name: 'Café Don Pedro',
+    category: 'Café de Especialidad',
     productName: 'Café de Especialidad 500g',
     price: 280,
-    imageUrl: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&auto=format&fit=crop&q=80',
-    category: 'Gastronomía',
-    badge: 'Más Vendido',
-    themeColor: THEME_COLORS[4], // Naranja / Ámbar
+    imageUrl: phoneProduct1Photo,
+    heroImageUrl: phoneHeroPhoto,
+    secondaryProduct: {
+      name: 'Café de Altura 500g',
+      price: 280,
+      imageUrl: phoneProduct2Photo,
+    },
+    themeColor: THEME_COLORS[0],
+    summary: 'Tostador independiente con envíos locales y cobro directo en línea.',
   },
   {
-    id: 'moda',
-    name: 'Aura Streetwear',
-    productName: 'Playera Boxy Fit Oversize',
+    id: 'auramoda',
+    name: 'Aura Moda',
+    category: 'Moda Independiente',
+    productName: 'Blusa Lino Natural',
     price: 450,
-    imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80',
-    category: 'Moda Urbana',
-    badge: 'Tendencia',
-    themeColor: THEME_COLORS[0], // Negro elegante
+    imageUrl: auraModaPhoto,
+    heroImageUrl: auraModaPhoto,
+    secondaryProduct: {
+      name: 'Camisa Algodón Orgánico',
+      price: 590,
+      imageUrl: auraModaPhoto,
+    },
+    themeColor: THEME_COLORS[1],
+    summary: 'Colección cápsula de textiles ligeros lista para vender desde Instagram.',
   },
   {
-    id: 'hogar',
+    id: 'luminastudio',
     name: 'Lumina Studio',
+    category: 'Hogar y Velas',
     productName: 'Vela Botánica Soja & Lavanda',
     price: 320,
-    imageUrl: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&auto=format&fit=crop&q=80',
-    category: 'Hogar & Spa',
-    badge: 'Artesanal',
-    themeColor: THEME_COLORS[2], // Verde esmeralda
+    imageUrl: luminaStudioPhoto,
+    heroImageUrl: luminaStudioPhoto,
+    secondaryProduct: {
+      name: 'Vela Ámbar & Cedro 240g',
+      price: 360,
+      imageUrl: luminaStudioPhoto,
+    },
+    themeColor: THEME_COLORS[5],
+    summary: 'Taller artesanal de velas en pequeños lotes con pedidos por WhatsApp.',
   },
 ];
 
 export const DEFAULT_STORE = {
-  brandName: 'Aura Moda',
+  brandName: 'Café Don Pedro',
   brandLogo: null,
-  themeColor: THEME_COLORS[0], // Negro elegante por defecto para look chic
-  productName: 'Playera Boxy Fit Oversize',
-  productPrice: 450,
-  productImage: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80',
-  description: '100% algodón pesado de 240 GSM. Corte holgado contemporáneo con costuras reforzadas.',
+  themeColor: THEME_COLORS[0],
+  categoryTitle: 'Café de Especialidad',
+  productName: 'Café de Especialidad 500g',
+  productPrice: 280,
+  productImage: phoneProduct1Photo,
+  heroImage: phoneHeroPhoto,
+  secondaryProduct: PRODUCT_PRESETS[0].secondaryProduct,
 };

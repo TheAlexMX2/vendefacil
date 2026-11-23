@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles, ShoppingBag, ArrowUpRight, Check } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import { PRODUCT_PRESETS } from '../data/presets.js';
+import { formatMXN, slugifyBrand } from '../utils/formatters.js';
 
 export default function StoreExamples({ onLoadExample, currentBrandName }) {
   const [clickedId, setClickedId] = useState(null);
@@ -10,85 +11,79 @@ export default function StoreExamples({ onLoadExample, currentBrandName }) {
     onLoadExample(item);
     setTimeout(() => setClickedId(null), 2500);
   };
+
   return (
-    <section id="ejemplos" className="py-20 bg-slate-50 border-t border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Casos de Éxito en Vivo</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Emprendedores Reales Vendiendo con VendeFácil
+    <section id="ejemplos" className="py-20 lg:py-24 bg-[#F6F4F1] border-t border-[#E6E4DF]">
+      <div className="max-w-[1040px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[620px]">
+          <h2 className="text-[30px] sm:text-[36px] font-bold tracking-[-0.025em] leading-[1.15] text-[#14151A]">
+            Explora cómo se adapta a distintos rubros
           </h2>
-          <p className="text-base text-slate-600">
-            Inspírate en tiendas creadas en minutos por emprendedores en México.
+          <p className="mt-3 text-[16px] text-[#4B4B52] leading-relaxed">
+            Ejemplos interactivos de muestra: carga cualquiera en el editor superior para probar su subdominio, color y producto en el teléfono.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {PRODUCT_PRESETS.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col group"
-            >
-              <div className="relative aspect-video overflow-hidden bg-slate-100">
-                <img
-                  src={item.imageUrl}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-bold text-slate-800 shadow-sm">
-                  {item.category}
-                </div>
-                <div className="absolute top-3 right-3 px-2 py-1 rounded-full bg-brand-600 text-white text-[10px] font-bold">
-                  {item.badge}
-                </div>
-              </div>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {PRODUCT_PRESETS.map((item) => {
+            const isLoaded = clickedId === item.id || currentBrandName === item.name;
+            const slug = slugifyBrand(item.name);
 
-              <div className="p-6 flex-1 flex flex-col justify-between">
+            return (
+              <article key={item.id} className="flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-extrabold text-lg text-slate-900 group-hover:text-brand-600 transition-colors">
+                  <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#E6E2DA] border border-[#E2DED6]">
+                    <img
+                      src={item.imageUrl}
+                      alt={`${item.name} — ${item.productName}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <h3 className="text-[18px] font-bold text-[#14151A] tracking-[-0.01em]">
                       {item.name}
                     </h3>
-                    <span className="text-xs font-mono font-semibold text-brand-700 bg-brand-50 px-2 py-0.5 rounded">
-                      {item.id}.vendefacil.online
-                    </span>
+
+                    <p className="mt-0.5 text-[12.5px] font-medium text-[#6E6D74]">
+                      {item.category} · {slug}.vendefacil.online
+                    </p>
+
+                    <p className="mt-2 text-[13.5px] text-[#4B4B52] leading-snug">
+                      {item.summary}
+                    </p>
+
+                    <p className="mt-2.5 text-[13.5px] font-semibold text-[#14151A] tabular-nums">
+                      {item.productName} · {formatMXN(item.price)}
+                    </p>
                   </div>
-                  
-                  <p className="text-xs text-slate-500 mb-4">
-                    Producto estrella: <strong className="text-slate-700">{item.productName}</strong> por ${item.price} MXN
-                  </p>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => handleClick(item)}
-                  className={`w-full py-2.5 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm ${
-                    clickedId === item.id || currentBrandName === item.name
-                      ? 'bg-emerald-600 text-white border border-emerald-600 shadow-emerald-600/20'
-                      : 'bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 border border-slate-200 hover:border-brand-200'
+                  className={`mt-4 w-full py-2.5 px-3.5 rounded-lg text-[13px] font-semibold border transition-colors duration-200 ease-expo flex items-center justify-center gap-1.5 cursor-pointer ${
+                    isLoaded
+                      ? 'bg-[#156563] text-white border-[#156563]'
+                      : 'bg-white text-[#14151A] border-[#D5D1C9] hover:border-[#14151A]'
                   }`}
                 >
-                  {clickedId === item.id || currentBrandName === item.name ? (
+                  {isLoaded ? (
                     <>
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      <span>¡Cargado en el editor y teléfono!</span>
+                      <Check className="w-3.5 h-3.5" strokeWidth={2.5} aria-hidden="true" />
+                      <span>Cargado en el editor</span>
                     </>
                   ) : (
                     <>
-                      <span>Cargar en el editor para probar</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <span>Probar en el editor</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </>
                   )}
                 </button>
-              </div>
-            </div>
-          ))}
+              </article>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

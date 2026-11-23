@@ -1,64 +1,27 @@
 import React from 'react';
-import { ShieldCheck, Zap, CreditCard, Lock, Sparkles, MessageCircle } from 'lucide-react';
+import { CreditCard, BadgePercent, Lock, MessageCircle } from 'lucide-react';
 
 export default function TrustBar() {
-  const trustItems = [
-    {
-      icon: CreditCard,
-      title: 'Mercado Pago Integrado',
-      desc: 'Cobra con tarjeta, OXXO y transferencia directa',
-    },
-    {
-      icon: ShieldCheck,
-      title: '0% Comisiones de Plataforma',
-      desc: 'Nosotros no retenemos ni un centavo de tus ventas',
-    },
-    {
-      icon: Lock,
-      title: 'Cifrado SSL 256-bit',
-      desc: 'Tu tienda y pagos completamente blindados',
-    },
-    {
-      icon: MessageCircle,
-      title: 'Notificaciones WhatsApp',
-      desc: 'Recibe alertas instantáneas en cada pedido',
-    },
+  const items = [
+    { icon: CreditCard, label: 'Mercado Pago integrado' },
+    { icon: BadgePercent, label: '0% comisiones' },
+    { icon: Lock, label: 'SSL 256-bit' },
+    { icon: MessageCircle, label: 'Notificaciones WhatsApp' },
   ];
 
   return (
-    <section className="py-10 bg-white border-y border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Subtle heading */}
-        <p className="text-center text-xs font-bold uppercase tracking-wider text-slate-400 mb-8">
-          Tecnología de pago y comercio segura diseñada para emprendedores en México
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {trustItems.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="flex items-start gap-3.5 p-4 rounded-2xl bg-slate-50/60 border border-slate-100 hover:border-brand-200 hover:bg-white transition-all group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all shadow-sm">
-                  <Icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-      </div>
-    </section>
+    <div className="max-w-[890px] mx-auto mt-5 sm:mt-6 pt-4 border-t border-[#E4E0D8]">
+      <ul className="grid grid-cols-2 md:flex md:items-center md:justify-between gap-x-6 gap-y-2.5">
+        {items.map((item) => {
+          const Icon = item.icon;
+          return (
+            <li key={item.label} className="flex items-center gap-2 text-[13.5px] font-medium text-[#14151A]">
+              <Icon className="w-[17px] h-[17px] text-[#78716C] shrink-0" strokeWidth={1.75} aria-hidden="true" />
+              <span>{item.label}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }

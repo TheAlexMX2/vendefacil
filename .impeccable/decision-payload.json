@@ -1,0 +1,248 @@
+{
+  "title": "Elige el mundo visual de VendeFácil",
+  "question": "El lanzamiento asignó Volante de Bazar Independiente. Quédate con esta dirección, elige una alternativa o vuelve a lanzar.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Volante de Bazar Independiente",
+      "kicker": "THE ROLL",
+      "lineage": "Impresos risográficos a dos tintas de bazares de diseño en México",
+      "thesis": "La landing se comporta como un pliego impreso de bazar donde armas tu puesto digital en vivo sobre papel vivo y bloques de tinta sólida.",
+      "palette": [
+        "#F4EED9",
+        "#1A3FA6",
+        "#E04426",
+        "#135E48",
+        "#17191E"
+      ],
+      "materials": [
+        "papel mantequilla con grano fino",
+        "tinta risográfica cobalto y bermellón",
+        "bloques de color a sangre"
+      ],
+      "viewport": "Cabecera de pliego con el precio $99 MXN/mes como sello protagónico, hoja interactiva de 4 campos sin cajas SaaS a la izquierda y tienda móvil en vivo sobre un bloque cobalto a sangre a la derecha.",
+      "risk": "Si las tintas se diluyen o se encierran en tarjetas blancas genéricas, pierde el carácter táctil de imprenta y se siente decorado.",
+      "raised": [
+        {
+          "from": "challenger-exploitation",
+          "raise": "La oferta ($99 MXN/mes · 0% comisión) asume jerarquía tipográfica protagónica de segundo titular, nunca reducida a una pastilla tímida."
+        },
+        {
+          "from": "challenger-ascii",
+          "raise": "Cada tecla en el editor actualiza en tiempo real no solo el teléfono, sino el sello de subdominio, color de tienda y estado activo de la hoja."
+        },
+        {
+          "from": "challenger-raku",
+          "raise": "Asimetría editorial deliberada y textura real de papel y tinta en cada banda, rechazando cuadrículas simétricas de tres tarjetas idénticas."
+        },
+        {
+          "from": "challenger-cape",
+          "raise": "Continuidad interactiva directa: los selectores de marca, logo, color y precio se conectan visualmente con la vista previa del teléfono en vivo."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Mostrador de Azulejo y Esmalte",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Mostradores de café de especialidad, panaderías y comercio de barrio mexicano",
+      "thesis": "Abrir tu tienda se siente como montar un mostrador físico de azulejo vidriado y placa de esmalte en sesenta segundos.",
+      "palette": [
+        "#E4ECE5",
+        "#FAFBF9",
+        "#142952",
+        "#E59A1A",
+        "#0E6E52"
+      ],
+      "materials": [
+        "azulejo eucalipto vidriado",
+        "porcelana mate de mostrador",
+        "placas de precio en esmalte cobalto y mostaza"
+      ],
+      "viewport": "Franja superior de mostrador con navegación limpia, mesa interactiva de porcelana con los 4 campos de la tienda a la izquierda y teléfono en vivo sobre tapete cobalto a la derecha.",
+      "risk": "Es la interpretación más familiar y amable para comercio local; corre el riesgo de parecer segura frente a apuestas más expresivas.",
+      "comp": ".impeccable/mocks/decision/model-pick.png"
+    },
+    {
+      "id": "challenger-flagship",
+      "kind": "challenger",
+      "catalogId": "luxury-fashion-flagship",
+      "verdict": "competitive",
+      "label": "Boutique Flagship Editorial",
+      "lineage": "Flagship digital de casa de moda con lookbook a sangre y espacio negativo",
+      "thesis": "Demuestra que una tienda de $99 MXN/mes puede lucir como un catálogo editorial independiente de alto nivel, no como una plantilla barata.",
+      "palette": [
+        "#F5F3EE",
+        "#151514",
+        "#8C3B2B",
+        "#DED9CE"
+      ],
+      "materials": [
+        "papel hueso mate",
+        "fotografía editorial a sangre",
+        "líneas capilares y controles tipográficos"
+      ],
+      "viewport": "Barra capilar superior, titular editorial monumental, controles tipográficos sobrios del creador en vivo a la izquierda y gran fotografía de producto dentro de la tienda móvil a la derecha.",
+      "case": "Eleva la percepción de marca y mantiene claridad impecable; cede cercanía popular de comercio de barrio frente al volante de bazar.",
+      "risk": "Puede sentirse demasiado sobria o fría para vendedores casuales de comida o abarrotes si no se equilibra con calidez en el copy.",
+      "comp": ".impeccable/mocks/decision/challenger-flagship.png",
+      "hero": "https://impeccable.style/worlds/cards/luxury-fashion-flagship-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/luxury-fashion-flagship.webp"
+    },
+    {
+      "id": "challenger-darkroom",
+      "kind": "challenger",
+      "catalogId": "signals-instruments-darkroom-safelight-bay",
+      "verdict": "competitive",
+      "label": "Cuarto Oscuro de Revelado",
+      "lineage": "Laboratorio fotográfico analógico bajo luz ámbar y bandejas de revelado",
+      "thesis": "Armar tu tienda se vive como revelar una fotografía en 4 estaciones táctiles donde tu producto cobra vida en la bandeja luminosa.",
+      "palette": [
+        "#1A130C",
+        "#D9821E",
+        "#F2D29B",
+        "#ECE7DD"
+      ],
+      "materials": [
+        "baño de luz ámbar de seguridad",
+        "bandeja esmaltada blanca",
+        "tiras de prueba y notas a lápiz graso"
+      ],
+      "viewport": "Estaciones numeradas 01 a 04 bajo luz ámbar a la izquierda para configurar la tienda, y bandeja esmaltada iluminada a la derecha donde emerge la tienda móvil con foto nítida.",
+      "case": "Fuerte resonancia artesanal y secuencia de 4 pasos clarísima; sacrifica la luminosidad diurna que esperan algunos comercios.",
+      "risk": "La atmósfera oscura de laboratorio puede resultar menos inmediata para compradores acostumbrados a tiendas muy luminosas.",
+      "comp": ".impeccable/mocks/decision/challenger-darkroom.png",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-darkroom-safelight-bay-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-darkroom-safelight-bay.webp"
+    },
+    {
+      "id": "challenger-exploitation",
+      "kind": "challenger",
+      "catalogId": "posters-covers-sleeves-exploitation-combo-sheet",
+      "verdict": "declined",
+      "label": "Cartel Doble Función Offset",
+      "lineage": "Carteles callejeros de doble función con tintas desfasadas y bloque de créditos",
+      "thesis": "Dos titulares gritando a distintas escalas con etiquetas inclinadas y créditos densos al pie.",
+      "palette": [
+        "#F5D018",
+        "#C81D25",
+        "#121212"
+      ],
+      "materials": [
+        "offset desfasado",
+        "papel delgado de cartel",
+        "trama de semitono visible"
+      ],
+      "viewport": "Doble titular gigante en amarillo y rojo sobre negro con campos del creador en etiquetas inclinadas.",
+      "case": "El sensacionalismo visual resta confianza financiera al cobrar con Mercado Pago y complica llenar el formulario.",
+      "kept": "Jerarquía comercial frontal en dos escalas para que $99 MXN/mes y 0% comisión lideren la lectura.",
+      "risk": "Se lee como espectáculo retro y dificulta la claridad del flujo de publicación.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-exploitation-combo-sheet-hero.webp"
+    },
+    {
+      "id": "challenger-ascii",
+      "kind": "challenger",
+      "catalogId": "medium-native-ascii-live-scene-render",
+      "verdict": "declined",
+      "label": "Escena Viva en Caracteres ASCII",
+      "lineage": "Renderizado en vivo por densidad de glifos en rejilla monoespaciada de fósforo",
+      "thesis": "Toda la página y el producto renderizados en vivo dentro de una rejilla monoespaciada monocroma.",
+      "palette": [
+        "#0C0F0A",
+        "#D99B26",
+        "#6B5320"
+      ],
+      "materials": [
+        "fósforo ámbar sobre negro",
+        "rejilla tipográfica monoespaciada"
+      ],
+      "viewport": "Lienzo monoespaciado de texto vivo con controles de consola y vista previa en caracteres.",
+      "case": "Aleja a emprendedores no técnicos e impide comprobar la fotografía real del producto dentro de la tienda.",
+      "kept": "Reactividad total en vivo en toda la superficie cada vez que el usuario modifica un campo.",
+      "risk": "Se percibe como herramienta de programadores y destruye la prueba visual del producto.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ascii-live-scene-render-hero.webp"
+    },
+    {
+      "id": "challenger-raku",
+      "kind": "challenger",
+      "catalogId": "clay-ceramics-fracture-raku-smoke-flash",
+      "verdict": "declined",
+      "label": "Cerámica Raku y Humo",
+      "lineage": "Vasijas raku al rojo vivo enfriadas en humo con esmalte craquelado sobre barro negro",
+      "thesis": "Superficies de barro carbonizado y esmalte craquelado plateado con destellos brasa en el paso activo.",
+      "palette": [
+        "#181615",
+        "#DDDAD3",
+        "#DF5A1E"
+      ],
+      "materials": [
+        "barro carbonizado",
+        "esmalte craquelado mate",
+        "acento brasa"
+      ],
+      "viewport": "Composición asimétrica oscura de registros de horneado para los 4 pasos junto al teléfono iluminado.",
+      "case": "Es demasiado austera y específica de cerámica para ropa urbana, café y comercio cotidiano en México.",
+      "kept": "Asimetría compositiva deliberada y honestidad táctil de materiales frente a tarjetas genéricas.",
+      "risk": "El contraste sombrío desconecta el entorno de la experiencia luminosa de compra móvil.",
+      "hero": "https://impeccable.style/worlds/cards/clay-ceramics-fracture-raku-smoke-flash-hero.webp"
+    },
+    {
+      "id": "challenger-cape",
+      "kind": "challenger",
+      "catalogId": "textiles-weave-drape-fashion-drawcord-transforming-cape",
+      "verdict": "declined",
+      "label": "Capa Textil con Jareta",
+      "lineage": "Seda negra mate atravesada por canales de cordón dorado que transforman la silueta",
+      "thesis": "Fondo de seda negra mate con canales de costura donde tirar un cordón transforma la vista de la tienda.",
+      "palette": [
+        "#121214",
+        "#C8A45D",
+        "#363940"
+      ],
+      "materials": [
+        "seda negra mate",
+        "cordón dorado",
+        "pespunte grafito"
+      ],
+      "viewport": "Lienzo radial oscuro con controles sobre líneas de costura que pliegan y revelan la tienda móvil.",
+      "case": "La alta costura negra y dorada se siente elitista e incompatible con una propuesta directa de $99 MXN/mes.",
+      "kept": "Continuidad interactiva clara entre cada control del editor y la respuesta inmediata de la tienda.",
+      "risk": "La geometría radial oscurece un formulario simple de 4 campos.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-drawcord-transforming-cape-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "Estándar E-Commerce Moderno",
+    "thesis": "La arquitectura clásica de plataforma de tiendas ejecutada con oficio limpio, sin adornos ni clichés de IA.",
+    "palette": [
+      "#FAFAF9",
+      "#111827",
+      "#0F766E",
+      "#E7E5E4"
+    ],
+    "materials": [
+      "papel blanco cálido limpio",
+      "fotografía nítida de producto",
+      "retícula precisa"
+    ],
+    "viewport": "Navegación limpia, titular directo con $99 MXN/mes, constructor interactivo sobrio a la izquierda y teléfono en vivo a la derecha.",
+    "risk": "Indistinguible a propósito de la categoría comercial establecida.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

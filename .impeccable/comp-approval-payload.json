@@ -1,0 +1,37 @@
+{
+  "title": "Aprueba la composición final de VendeFácil",
+  "question": "Mismo mundo visual (Estándar E-Commerce Moderno), tres estructuras distintas. Elige la composición que llevaremos a código o indica ajustes en las notas.",
+  "options": [
+    {
+      "id": "comp-1",
+      "label": "Opción 1 · Clásico Centrado con Riel de Pasos",
+      "thesis": "Titular centrado sobre una tarjeta de constructor limpia con riel lateral de 4 pasos junto al teléfono en vivo.",
+      "palette": ["#FAFAF9", "#FFFFFF", "#111827", "#0F766E", "#E7E5E4"],
+      "materials": ["papel blanco cálido", "tarjeta limpia con riel lateral", "fotografía nítida"],
+      "viewport": "Titular centrado con subtítulo de $99 MXN, tarjeta dividida de creador a la izquierda, teléfono a la derecha y franja de 4 garantías al pie.",
+      "risk": "Composición más clásica y simétrica; prioriza familiaridad inmediata sobre impacto editorial.",
+      "comp": ".impeccable/mocks/decision/canon.png"
+    },
+    {
+      "id": "comp-2",
+      "label": "Opción 2 · Taller Editorial Asimétrico",
+      "thesis": "Elimina las cajas pesadas: titular alineado a la izquierda y formulario por líneas finas frente a un escenario cálido de piedra arena para el teléfono.",
+      "palette": ["#FAF9F7", "#F0EDE8", "#111827", "#0F766E", "#E5E2DC"],
+      "materials": ["alabastro mate", "escenario piedra arena", "líneas capilares sin cajas pesadas"],
+      "viewport": "Columna izquierda abierta con titular y los 4 campos directos en líneas limpias; columna derecha en piedra arena enmarcando el teléfono en vivo.",
+      "risk": "Menos delimitación de caja alrededor del formulario; exige tipografía y alineación muy precisas para mantener claridad.",
+      "comp": ".impeccable/mocks/comp-2.png"
+    },
+    {
+      "id": "comp-3",
+      "label": "Opción 3 · Escaparate con Flujo Real de Venta",
+      "thesis": "Encabezado editorial con oferta transparente a la derecha y mesa de trabajo amplia que muestra el teléfono junto a una alerta real de pedido por WhatsApp.",
+      "palette": ["#FAFAF9", "#F2EFE9", "#111827", "#0F766E", "#E5E2DC"],
+      "materials": ["blanco cálido", "mesa travertino suave", "prueba visual de cobro + WhatsApp"],
+      "viewport": "Titular a la izquierda y bloque Plan Lite $99 MXN a la derecha arriba; abajo mesa travertino con editor de 4 pasos, teléfono en vivo y tarjeta de aviso WhatsApp.",
+      "risk": "Mayor densidad de información en el primer pantallazo; requiere buen respiro en pantallas de 1280px.",
+      "comp": ".impeccable/mocks/comp-3.png"
+    }
+  ],
+  "steer": true
+}

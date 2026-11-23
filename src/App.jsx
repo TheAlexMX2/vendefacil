@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Check } from 'lucide-react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import PhoneMockup from './components/PhoneMockup.jsx';
-import TrustBar from './components/TrustBar.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import Pricing from './components/Pricing.jsx';
 import StoreExamples from './components/StoreExamples.jsx';
@@ -26,27 +26,27 @@ export default function App() {
       brandName: example.name,
       brandLogo: null,
       themeColor: example.themeColor || DEFAULT_STORE.themeColor,
+      categoryTitle: example.category || DEFAULT_STORE.categoryTitle,
       productName: example.productName,
       productPrice: example.price,
       productImage: example.imageUrl,
+      heroImage: example.heroImageUrl || example.imageUrl,
+      secondaryProduct: example.secondaryProduct || null,
     });
-    setToastMessage(`¡Tienda "${example.name}" cargada en el editor y teléfono!`);
-    setTimeout(() => setToastMessage(null), 3500);
+    setToastMessage(`Tienda “${example.name}” cargada en el editor.`);
+    setTimeout(() => setToastMessage(null), 3200);
 
-    // Smooth scroll up to hero creator
     const creatorElement = document.getElementById('creador');
     if (creatorElement) {
-      creatorElement.scrollIntoView({ behavior: 'smooth' });
+      creatorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col text-slate-900 selection:bg-brand-500 selection:text-white">
-      {/* 1. Header Navigation */}
+    <div className="min-h-screen bg-[#F6F4F1] flex flex-col text-[#14151A]">
       <Header onOpenLogin={() => setIsLoginOpen(true)} />
 
       <main className="flex-1">
-        {/* 2. Hero Section: Split Screen with Interactive Form + Live Phone */}
         <Hero
           storeState={storeState}
           setStoreState={setStoreState}
@@ -55,34 +55,29 @@ export default function App() {
           <PhoneMockup storeState={storeState} />
         </Hero>
 
-        {/* Trust Badges */}
-        <TrustBar />
-
-        {/* 4. Cómo Funciona en 3 Pasos */}
         <HowItWorks />
 
-        {/* 3. Sección de Precio Transparente (Plan Lite $99 MXN) */}
         <Pricing onPublishClick={handleOpenPublish} />
 
-        {/* Casos de Éxito / Ejemplos */}
         <StoreExamples
           onLoadExample={handleLoadExample}
           currentBrandName={storeState.brandName}
         />
       </main>
 
-      {/* 5. Footer Completo */}
       <Footer />
 
-      {/* Interactive Toast Feedback */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 animate-fadeIn">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="text-xs font-semibold">{toastMessage}</span>
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-6 right-6 z-50 bg-[#14151A] text-white px-4 py-3 rounded-xl shadow-modal border border-white/10 flex items-center gap-2.5 text-[13px] font-medium"
+        >
+          <Check className="w-4 h-4 text-[#5CC4BF] shrink-0" strokeWidth={2.5} aria-hidden="true" />
+          <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Interactive Modals */}
       <PublishModal
         isOpen={isPublishOpen}
         onClose={() => setIsPublishOpen(false)}

@@ -1,0 +1,2067 @@
+{
+  "tool": "comp-spec inspect-map",
+  "version": 1,
+  "referenceOnly": true,
+  "stateChanged": false,
+  "comp": ".impeccable/mocks/decision/canon.png",
+  "compSize": {
+    "width": 1376,
+    "height": 768
+  },
+  "inputRegionCount": 32,
+  "regions": [
+    {
+      "id": "header-bar",
+      "kind": "chrome",
+      "note": "Full-width warm-white top navigation bar separated by a subtle warm stone bottom hairline",
+      "grid": null,
+      "container": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 0.0964
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 1376,
+        "h": 74
+      },
+      "aspect": 18.5946,
+      "palette": [
+        {
+          "hex": "#f7f8f7",
+          "coverage": 0.9116
+        },
+        {
+          "hex": "#186867",
+          "coverage": 0.0533
+        },
+        {
+          "hex": "#161722",
+          "coverage": 0.0214
+        },
+        {
+          "hex": "#7e7e83",
+          "coverage": 0.0084
+        },
+        {
+          "hex": "#44444b",
+          "coverage": 0.0053
+        }
+      ],
+      "detail": {
+        "energy": 26.0947
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 1,
+      "cropPath": "region-1.png"
+    },
+    {
+      "id": "brand-logo",
+      "kind": "chrome",
+      "note": "Dark charcoal rounded square V emblem paired with bold VendeFácil wordmark",
+      "grid": null,
+      "parentId": "header-bar",
+      "box": {
+        "x": 0.0422,
+        "y": 0.0182,
+        "w": 0.141,
+        "h": 0.0573
+      },
+      "px": {
+        "x": 58,
+        "y": 14,
+        "w": 194,
+        "h": 44
+      },
+      "aspect": 4.4091,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.7246
+        },
+        {
+          "hex": "#181826",
+          "coverage": 0.1707
+        },
+        {
+          "hex": "#34373c",
+          "coverage": 0.0429
+        },
+        {
+          "hex": "#c8c8cb",
+          "coverage": 0.0366
+        },
+        {
+          "hex": "#9d9ca1",
+          "coverage": 0.0251
+        }
+      ],
+      "detail": {
+        "energy": 41.4406
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 2,
+      "cropPath": "region-2.png"
+    },
+    {
+      "id": "nav-links",
+      "kind": "control",
+      "note": "Horizontal top navigation links Cómo funciona, Precios, Ejemplos, and Iniciar sesión",
+      "grid": null,
+      "parentId": "header-bar",
+      "box": {
+        "x": 0.4869,
+        "y": 0.0234,
+        "w": 0.343,
+        "h": 0.0469
+      },
+      "px": {
+        "x": 670,
+        "y": 18,
+        "w": 472,
+        "h": 36
+      },
+      "aspect": 13.1111,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8912
+        },
+        {
+          "hex": "#0f1014",
+          "coverage": 0.047
+        },
+        {
+          "hex": "#48484b",
+          "coverage": 0.0206
+        },
+        {
+          "hex": "#b6b8ba",
+          "coverage": 0.0206
+        },
+        {
+          "hex": "#818185",
+          "coverage": 0.0206
+        }
+      ],
+      "detail": {
+        "energy": 38.648
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 3,
+      "cropPath": "region-3.png"
+    },
+    {
+      "id": "nav-cta",
+      "kind": "control",
+      "note": "Solid forest-teal primary header button Crear mi tienda",
+      "grid": null,
+      "parentId": "header-bar",
+      "box": {
+        "x": 0.8343,
+        "y": 0.0156,
+        "w": 0.1221,
+        "h": 0.0625
+      },
+      "px": {
+        "x": 1148,
+        "y": 12,
+        "w": 168,
+        "h": 48
+      },
+      "aspect": 3.5,
+      "palette": [
+        {
+          "hex": "#196867",
+          "coverage": 0.692
+        },
+        {
+          "hex": "#e7f8f4",
+          "coverage": 0.25
+        },
+        {
+          "hex": "#5f928e",
+          "coverage": 0.0313
+        },
+        {
+          "hex": "#b0d0ce",
+          "coverage": 0.019
+        },
+        {
+          "hex": "#93cac1",
+          "coverage": 0.0078
+        }
+      ],
+      "detail": {
+        "energy": 24.6282
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 4,
+      "cropPath": "region-4.png"
+    },
+    {
+      "id": "hero-headline",
+      "kind": "text",
+      "note": "Centered two-line dark charcoal display headline Tu tienda en línea lista para vender. Sin código, sin comisiones.",
+      "grid": null,
+      "box": {
+        "x": 0.2253,
+        "y": 0.1536,
+        "w": 0.5494,
+        "h": 0.1406
+      },
+      "px": {
+        "x": 310,
+        "y": 118,
+        "w": 756,
+        "h": 108
+      },
+      "aspect": 7,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.776
+        },
+        {
+          "hex": "#171a29",
+          "coverage": 0.1782
+        },
+        {
+          "hex": "#7f7f85",
+          "coverage": 0.0174
+        },
+        {
+          "hex": "#bfbfc5",
+          "coverage": 0.0163
+        },
+        {
+          "hex": "#212b2b",
+          "coverage": 0.0122
+        }
+      ],
+      "detail": {
+        "energy": 97.5283
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 5,
+      "cropPath": "region-5.png"
+    },
+    {
+      "id": "hero-subtitle",
+      "kind": "text",
+      "note": "Centered offer subtitle $99 MXN al mes · Cobra directo con Mercado Pago",
+      "grid": null,
+      "box": {
+        "x": 0.3052,
+        "y": 0.2969,
+        "w": 0.391,
+        "h": 0.0495
+      },
+      "px": {
+        "x": 420,
+        "y": 228,
+        "w": 538,
+        "h": 38
+      },
+      "aspect": 14.1579,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.866
+        },
+        {
+          "hex": "#111116",
+          "coverage": 0.063
+        },
+        {
+          "hex": "#494a4d",
+          "coverage": 0.0245
+        },
+        {
+          "hex": "#919193",
+          "coverage": 0.0232
+        },
+        {
+          "hex": "#c9c9cb",
+          "coverage": 0.0232
+        }
+      ],
+      "detail": {
+        "energy": 63.7875
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 6,
+      "cropPath": "region-6.png"
+    },
+    {
+      "id": "builder-card",
+      "kind": "chrome",
+      "note": "Elevated white rounded interactive store builder card with subtle warm border and soft shadow",
+      "grid": null,
+      "container": true,
+      "box": {
+        "x": 0.2209,
+        "y": 0.3698,
+        "w": 0.4012,
+        "h": 0.5026
+      },
+      "px": {
+        "x": 304,
+        "y": 284,
+        "w": 552,
+        "h": 386
+      },
+      "aspect": 1.4301,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9155
+        },
+        {
+          "hex": "#196666",
+          "coverage": 0.0524
+        },
+        {
+          "hex": "#cdc8c7",
+          "coverage": 0.0134
+        },
+        {
+          "hex": "#181a22",
+          "coverage": 0.011
+        },
+        {
+          "hex": "#626263",
+          "coverage": 0.0077
+        }
+      ],
+      "detail": {
+        "energy": 21.4202
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 7,
+      "cropPath": "region-7.png"
+    },
+    {
+      "id": "builder-step-rail",
+      "kind": "control",
+      "note": "Left vertical 4-step navigation rail showing 1 Tu marca active in teal, 2 Apariencia, 3 Producto, 4 Publicar",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.2253,
+        "y": 0.3776,
+        "w": 0.1279,
+        "h": 0.4844
+      },
+      "px": {
+        "x": 310,
+        "y": 290,
+        "w": 176,
+        "h": 372
+      },
+      "aspect": 0.4731,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.985
+        },
+        {
+          "hex": "#5f6565",
+          "coverage": 0.0067
+        },
+        {
+          "hex": "#999b9b",
+          "coverage": 0.0032
+        },
+        {
+          "hex": "#186158",
+          "coverage": 0.003
+        },
+        {
+          "hex": "#c4c8c8",
+          "coverage": 0.0021
+        }
+      ],
+      "detail": {
+        "energy": 4.7861
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 8,
+      "cropPath": "region-8.png"
+    },
+    {
+      "id": "builder-brand-header",
+      "kind": "text",
+      "note": "Editable brand heading Café Don Pedro above live subdomain cafedonpedro.vendefacil.online · Disponible",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.388,
+        "w": 0.2515,
+        "h": 0.0677
+      },
+      "px": {
+        "x": 492,
+        "y": 298,
+        "w": 346,
+        "h": 52
+      },
+      "aspect": 6.6538,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.9114
+        },
+        {
+          "hex": "#171922",
+          "coverage": 0.0279
+        },
+        {
+          "hex": "#47474f",
+          "coverage": 0.023
+        },
+        {
+          "hex": "#cacbd2",
+          "coverage": 0.0206
+        },
+        {
+          "hex": "#909296",
+          "coverage": 0.0171
+        }
+      ],
+      "detail": {
+        "energy": 40.9315
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 9,
+      "cropPath": "region-9.png"
+    },
+    {
+      "id": "builder-logo-and-colors",
+      "kind": "control",
+      "note": "Square Logo Subir logo uploader beside Color de tienda label and six circular theme color swatches",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.4609,
+        "w": 0.2515,
+        "h": 0.0859
+      },
+      "px": {
+        "x": 492,
+        "y": 354,
+        "w": 346,
+        "h": 66
+      },
+      "aspect": 5.2424,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9063
+        },
+        {
+          "hex": "#212932",
+          "coverage": 0.0329
+        },
+        {
+          "hex": "#3a5a71",
+          "coverage": 0.0213
+        },
+        {
+          "hex": "#634739",
+          "coverage": 0.0204
+        },
+        {
+          "hex": "#1b6864",
+          "coverage": 0.0192
+        }
+      ],
+      "detail": {
+        "energy": 26.9329
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 10,
+      "cropPath": "region-10.png"
+    },
+    {
+      "id": "builder-product-input",
+      "kind": "control",
+      "note": "Nombre del producto label and text field showing Café de Especialidad 500g",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.5495,
+        "w": 0.2515,
+        "h": 0.0677
+      },
+      "px": {
+        "x": 492,
+        "y": 422,
+        "w": 346,
+        "h": 52
+      },
+      "aspect": 6.6538,
+      "palette": [
+        {
+          "hex": "#f7f8f8",
+          "coverage": 0.9331
+        },
+        {
+          "hex": "#6f6e74",
+          "coverage": 0.0241
+        },
+        {
+          "hex": "#38383e",
+          "coverage": 0.0197
+        },
+        {
+          "hex": "#b0b0b2",
+          "coverage": 0.0183
+        },
+        {
+          "hex": "#101010",
+          "coverage": 0.0048
+        }
+      ],
+      "detail": {
+        "energy": 27.747
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 11,
+      "cropPath": "region-11.png"
+    },
+    {
+      "id": "builder-photo-label",
+      "kind": "text",
+      "note": "Field label reading Foto del producto above the upload control",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.6198,
+        "w": 0.1119,
+        "h": 0.0286
+      },
+      "px": {
+        "x": 492,
+        "y": 476,
+        "w": 154,
+        "h": 22
+      },
+      "aspect": 7,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8918
+        },
+        {
+          "hex": "#727375",
+          "coverage": 0.0361
+        },
+        {
+          "hex": "#18191e",
+          "coverage": 0.0337
+        },
+        {
+          "hex": "#b1b1b6",
+          "coverage": 0.0312
+        },
+        {
+          "hex": "#3d4343",
+          "coverage": 0.0072
+        }
+      ],
+      "detail": {
+        "energy": 33.5482
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 12,
+      "cropPath": "region-12.png"
+    },
+    {
+      "id": "builder-photo-dropzone",
+      "kind": "control",
+      "note": "Dashed Arrastra tu foto file upload area with upload icon",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.6484,
+        "w": 0.1134,
+        "h": 0.0651
+      },
+      "px": {
+        "x": 492,
+        "y": 498,
+        "w": 156,
+        "h": 50
+      },
+      "aspect": 3.12,
+      "palette": [
+        {
+          "hex": "#f6f6f7",
+          "coverage": 0.9367
+        },
+        {
+          "hex": "#909193",
+          "coverage": 0.0385
+        },
+        {
+          "hex": "#c8c7ce",
+          "coverage": 0.017
+        },
+        {
+          "hex": "#63666d",
+          "coverage": 0.0079
+        }
+      ],
+      "detail": {
+        "energy": 10.4714
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 13,
+      "cropPath": "region-13.png"
+    },
+    {
+      "id": "preset-thumb-1",
+      "kind": "image",
+      "note": "Square studio photograph of matte dark specialty coffee bag on warm neutral background",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.4731,
+        "y": 0.6471,
+        "w": 0.0327,
+        "h": 0.0651
+      },
+      "px": {
+        "x": 651,
+        "y": 497,
+        "w": 45,
+        "h": 50
+      },
+      "aspect": 0.9,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.3611
+        },
+        {
+          "hex": "#d1c9ba",
+          "coverage": 0.2963
+        },
+        {
+          "hex": "#33302e",
+          "coverage": 0.1898
+        },
+        {
+          "hex": "#60554d",
+          "coverage": 0.0787
+        },
+        {
+          "hex": "#3f6a5a",
+          "coverage": 0.0741
+        }
+      ],
+      "detail": {
+        "energy": 10.9273
+      },
+      "medium": "raster",
+      "plate": "assets/plates/preset-thumb-1.png",
+      "text": null,
+      "number": 14,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 2250,
+        "remainingPixels": 2250,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "builder-card"
+        ]
+      },
+      "cropPath": "region-14.png",
+      "referencePath": "reference-14.png"
+    },
+    {
+      "id": "preset-thumb-2",
+      "kind": "image",
+      "note": "Square photograph of roasted specialty coffee beans and ceramic cup on dark wood",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.5065,
+        "y": 0.6471,
+        "w": 0.032,
+        "h": 0.0651
+      },
+      "px": {
+        "x": 697,
+        "y": 497,
+        "w": 44,
+        "h": 50
+      },
+      "aspect": 0.88,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.3739
+        },
+        {
+          "hex": "#201e21",
+          "coverage": 0.1975
+        },
+        {
+          "hex": "#414243",
+          "coverage": 0.1891
+        },
+        {
+          "hex": "#5f4838",
+          "coverage": 0.1555
+        },
+        {
+          "hex": "#917761",
+          "coverage": 0.084
+        }
+      ],
+      "detail": {
+        "energy": 10.247
+      },
+      "medium": "raster",
+      "plate": "assets/plates/preset-thumb-2.png",
+      "text": null,
+      "number": 15,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 2200,
+        "remainingPixels": 2200,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "builder-card"
+        ]
+      },
+      "cropPath": "region-15.png",
+      "referencePath": "reference-15.png"
+    },
+    {
+      "id": "preset-thumb-3",
+      "kind": "image",
+      "note": "Square photograph of specialty iced coffee glass on minimalist linen table",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.5385,
+        "y": 0.6471,
+        "w": 0.032,
+        "h": 0.0651
+      },
+      "px": {
+        "x": 741,
+        "y": 497,
+        "w": 44,
+        "h": 50
+      },
+      "aspect": 0.88,
+      "palette": [
+        {
+          "hex": "#cac8c7",
+          "coverage": 0.4467
+        },
+        {
+          "hex": "#f8f8f7",
+          "coverage": 0.3689
+        },
+        {
+          "hex": "#a8907d",
+          "coverage": 0.1066
+        },
+        {
+          "hex": "#42372e",
+          "coverage": 0.0451
+        },
+        {
+          "hex": "#080808",
+          "coverage": 0.0328
+        }
+      ],
+      "detail": {
+        "energy": 7.0768
+      },
+      "medium": "raster",
+      "plate": "assets/plates/preset-thumb-3.png",
+      "text": null,
+      "number": 16,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 2200,
+        "remainingPixels": 2200,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "builder-card"
+        ]
+      },
+      "cropPath": "region-16.png",
+      "referencePath": "reference-16.png"
+    },
+    {
+      "id": "preset-thumb-4",
+      "kind": "image",
+      "note": "Square photograph of artisanal bakery pastry and coffee packaging box",
+      "grid": null,
+      "bleed": true,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.5705,
+        "y": 0.6471,
+        "w": 0.0342,
+        "h": 0.0651
+      },
+      "px": {
+        "x": 785,
+        "y": 497,
+        "w": 47,
+        "h": 50
+      },
+      "aspect": 0.94,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.4274
+        },
+        {
+          "hex": "#cccac9",
+          "coverage": 0.3508
+        },
+        {
+          "hex": "#a79b99",
+          "coverage": 0.0927
+        },
+        {
+          "hex": "#40281c",
+          "coverage": 0.0685
+        },
+        {
+          "hex": "#684b3a",
+          "coverage": 0.0605
+        }
+      ],
+      "detail": {
+        "energy": 7.6888
+      },
+      "medium": "raster",
+      "plate": "assets/plates/preset-thumb-4.png",
+      "text": null,
+      "number": 17,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 2350,
+        "remainingPixels": 2350,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "builder-card"
+        ]
+      },
+      "cropPath": "region-17.png",
+      "referencePath": "reference-17.png"
+    },
+    {
+      "id": "builder-price-input",
+      "kind": "control",
+      "note": "Precio field label and numeric MXN input displaying $280 MXN",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.7161,
+        "w": 0.2515,
+        "h": 0.0729
+      },
+      "px": {
+        "x": 492,
+        "y": 550,
+        "w": 346,
+        "h": 56
+      },
+      "aspect": 6.1786,
+      "palette": [
+        {
+          "hex": "#f7f8f8",
+          "coverage": 0.9785
+        },
+        {
+          "hex": "#c0c1c6",
+          "coverage": 0.0105
+        },
+        {
+          "hex": "#44444e",
+          "coverage": 0.005
+        },
+        {
+          "hex": "#111116",
+          "coverage": 0.0032
+        },
+        {
+          "hex": "#9898a8",
+          "coverage": 0.0027
+        }
+      ],
+      "detail": {
+        "energy": 11.8382
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 18,
+      "cropPath": "region-18.png"
+    },
+    {
+      "id": "builder-cta",
+      "kind": "control",
+      "note": "Full-width solid forest-teal CTA button Publicar esta tienda por $99 MXN/mes",
+      "grid": null,
+      "parentId": "builder-card",
+      "box": {
+        "x": 0.3576,
+        "y": 0.7969,
+        "w": 0.2515,
+        "h": 0.0573
+      },
+      "px": {
+        "x": 492,
+        "y": 612,
+        "w": 346,
+        "h": 44
+      },
+      "aspect": 7.8636,
+      "palette": [
+        {
+          "hex": "#196766",
+          "coverage": 0.6267
+        },
+        {
+          "hex": "#f6f8f8",
+          "coverage": 0.2477
+        },
+        {
+          "hex": "#96aaaa",
+          "coverage": 0.0709
+        },
+        {
+          "hex": "#ade1df",
+          "coverage": 0.0386
+        },
+        {
+          "hex": "#69a6a2",
+          "coverage": 0.0161
+        }
+      ],
+      "detail": {
+        "energy": 42.8608
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 19,
+      "cropPath": "region-19.png"
+    },
+    {
+      "id": "phone-frame",
+      "kind": "chrome",
+      "note": "CSS rounded dark-bezel mobile viewport frame with top notch enclosing the live Café Don Pedro storefront",
+      "grid": null,
+      "codeDrawn": true,
+      "container": true,
+      "box": {
+        "x": 0.6337,
+        "y": 0.3698,
+        "w": 0.1439,
+        "h": 0.5026
+      },
+      "px": {
+        "x": 872,
+        "y": 284,
+        "w": 198,
+        "h": 386
+      },
+      "aspect": 0.513,
+      "palette": [
+        {
+          "hex": "#f4f4f3",
+          "coverage": 0.3932
+        },
+        {
+          "hex": "#131212",
+          "coverage": 0.384
+        },
+        {
+          "hex": "#cdc4ba",
+          "coverage": 0.1235
+        },
+        {
+          "hex": "#604535",
+          "coverage": 0.0529
+        },
+        {
+          "hex": "#897e77",
+          "coverage": 0.0464
+        }
+      ],
+      "detail": {
+        "energy": 27.8236
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 20,
+      "cropPath": "region-20.png"
+    },
+    {
+      "id": "phone-store-nav",
+      "kind": "chrome",
+      "note": "Mobile storefront top bar displaying Café Don Pedro brand name, search icon, and bag icon",
+      "grid": null,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.641,
+        "y": 0.4036,
+        "w": 0.1294,
+        "h": 0.0495
+      },
+      "px": {
+        "x": 882,
+        "y": 310,
+        "w": 178,
+        "h": 38
+      },
+      "aspect": 4.6842,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8366
+        },
+        {
+          "hex": "#090909",
+          "coverage": 0.1102
+        },
+        {
+          "hex": "#c7c6c7",
+          "coverage": 0.0182
+        },
+        {
+          "hex": "#6d6d6d",
+          "coverage": 0.0182
+        },
+        {
+          "hex": "#9e9ea2",
+          "coverage": 0.0169
+        }
+      ],
+      "detail": {
+        "energy": 29.29
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 21,
+      "cropPath": "region-21.png"
+    },
+    {
+      "id": "phone-hero-photo",
+      "kind": "image",
+      "note": "Warm moody editorial photograph of steaming white coffee cup and falling roasted beans on dark wood",
+      "grid": null,
+      "bleed": true,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.6424,
+        "y": 0.4531,
+        "w": 0.1265,
+        "h": 0.2057
+      },
+      "px": {
+        "x": 884,
+        "y": 348,
+        "w": 174,
+        "h": 158
+      },
+      "aspect": 1.1013,
+      "palette": [
+        {
+          "hex": "#141313",
+          "coverage": 0.71
+        },
+        {
+          "hex": "#664c3d",
+          "coverage": 0.1365
+        },
+        {
+          "hex": "#827870",
+          "coverage": 0.0854
+        },
+        {
+          "hex": "#aca9a4",
+          "coverage": 0.0394
+        },
+        {
+          "hex": "#332113",
+          "coverage": 0.0287
+        }
+      ],
+      "detail": {
+        "energy": 16.3841
+      },
+      "medium": "raster",
+      "plate": "assets/plates/phone-hero-photo.png",
+      "text": null,
+      "number": 22,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 4672,
+        "totalPixels": 27492,
+        "remainingPixels": 22820,
+        "excludedFraction": 0.16994034628255492,
+        "fullyExcluded": false,
+        "regions": [
+          {
+            "id": "phone-hero-title",
+            "kind": "text",
+            "cropPx": {
+              "x": 14,
+              "y": 64,
+              "w": 146,
+              "h": 32
+            },
+            "pixels": 4672
+          }
+        ],
+        "ignoredContainers": [
+          "phone-frame"
+        ]
+      },
+      "cropPath": "region-22.png",
+      "referencePath": "reference-22.png"
+    },
+    {
+      "id": "phone-hero-title",
+      "kind": "text",
+      "note": "White centered store display heading Café Don Pedro overlaid on the coffee banner",
+      "grid": null,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.6526,
+        "y": 0.5365,
+        "w": 0.1061,
+        "h": 0.0417
+      },
+      "px": {
+        "x": 898,
+        "y": 412,
+        "w": 146,
+        "h": 32
+      },
+      "aspect": 4.5625,
+      "palette": [
+        {
+          "hex": "#141313",
+          "coverage": 0.8108
+        },
+        {
+          "hex": "#efefee",
+          "coverage": 0.0816
+        },
+        {
+          "hex": "#888685",
+          "coverage": 0.0538
+        },
+        {
+          "hex": "#b8b7b7",
+          "coverage": 0.0408
+        },
+        {
+          "hex": "#433f3f",
+          "coverage": 0.013
+        }
+      ],
+      "detail": {
+        "energy": 40.4578
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 23,
+      "cropPath": "region-23.png"
+    },
+    {
+      "id": "phone-catalog-heading",
+      "kind": "text",
+      "note": "Mobile storefront catalog section heading Café de Especialidad",
+      "grid": null,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.6439,
+        "y": 0.6667,
+        "w": 0.1119,
+        "h": 0.0313
+      },
+      "px": {
+        "x": 886,
+        "y": 512,
+        "w": 154,
+        "h": 24
+      },
+      "aspect": 6.4167,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8491
+        },
+        {
+          "hex": "#949494",
+          "coverage": 0.0462
+        },
+        {
+          "hex": "#0e0e0e",
+          "coverage": 0.0414
+        },
+        {
+          "hex": "#333434",
+          "coverage": 0.0389
+        },
+        {
+          "hex": "#c6c6c6",
+          "coverage": 0.0243
+        }
+      ],
+      "detail": {
+        "energy": 35.3823
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 24,
+      "cropPath": "region-24.png"
+    },
+    {
+      "id": "phone-product-1-photo",
+      "kind": "image",
+      "note": "Studio photograph of dark matte specialty coffee bag on warm cream background",
+      "grid": null,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.6475,
+        "y": 0.7005,
+        "w": 0.0574,
+        "h": 0.1042
+      },
+      "px": {
+        "x": 891,
+        "y": 538,
+        "w": 79,
+        "h": 80
+      },
+      "aspect": 0.9875,
+      "palette": [
+        {
+          "hex": "#d9cabb",
+          "coverage": 0.4542
+        },
+        {
+          "hex": "#f7f7f5",
+          "coverage": 0.2679
+        },
+        {
+          "hex": "#2a2928",
+          "coverage": 0.2206
+        },
+        {
+          "hex": "#514f47",
+          "coverage": 0.0315
+        },
+        {
+          "hex": "#90827d",
+          "coverage": 0.0258
+        }
+      ],
+      "detail": {
+        "energy": 6.7821
+      },
+      "medium": "raster",
+      "plate": "assets/plates/phone-product-1-photo.png",
+      "text": null,
+      "number": 25,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 6320,
+        "remainingPixels": 6320,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "phone-frame"
+        ]
+      },
+      "cropPath": "region-25.png",
+      "referencePath": "reference-25.png"
+    },
+    {
+      "id": "phone-product-2-photo",
+      "kind": "image",
+      "note": "Warm studio photograph of espresso cup and roasted coffee beans on wooden board",
+      "grid": null,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.7057,
+        "y": 0.7005,
+        "w": 0.0574,
+        "h": 0.1042
+      },
+      "px": {
+        "x": 971,
+        "y": 538,
+        "w": 79,
+        "h": 80
+      },
+      "aspect": 0.9875,
+      "palette": [
+        {
+          "hex": "#f7f6f6",
+          "coverage": 0.3448
+        },
+        {
+          "hex": "#2d3938",
+          "coverage": 0.1954
+        },
+        {
+          "hex": "#503928",
+          "coverage": 0.182
+        },
+        {
+          "hex": "#866850",
+          "coverage": 0.1398
+        },
+        {
+          "hex": "#2c2e3e",
+          "coverage": 0.1379
+        }
+      ],
+      "detail": {
+        "energy": 14.7764
+      },
+      "medium": "raster",
+      "plate": "assets/plates/phone-product-2-photo.png",
+      "text": null,
+      "number": 26,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 6320,
+        "remainingPixels": 6320,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "phone-frame"
+        ]
+      },
+      "cropPath": "region-26.png",
+      "referencePath": "reference-26.png"
+    },
+    {
+      "id": "phone-product-captions",
+      "kind": "text",
+      "note": "Two side-by-side product titles and $280 MXN prices beneath the mobile product thumbnails",
+      "grid": null,
+      "parentId": "phone-frame",
+      "box": {
+        "x": 0.6453,
+        "y": 0.8047,
+        "w": 0.1206,
+        "h": 0.0495
+      },
+      "px": {
+        "x": 888,
+        "y": 618,
+        "w": 166,
+        "h": 38
+      },
+      "aspect": 4.3684,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.742
+        },
+        {
+          "hex": "#080808",
+          "coverage": 0.0985
+        },
+        {
+          "hex": "#6f7070",
+          "coverage": 0.086
+        },
+        {
+          "hex": "#b0b0b1",
+          "coverage": 0.0569
+        },
+        {
+          "hex": "#353534",
+          "coverage": 0.0166
+        }
+      ],
+      "detail": {
+        "energy": 41.3334
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 27,
+      "cropPath": "region-27.png"
+    },
+    {
+      "id": "trust-bar",
+      "kind": "chrome",
+      "note": "Quiet horizontal four-item trust ledger below a subtle top stone hairline rule",
+      "grid": null,
+      "container": true,
+      "box": {
+        "x": 0.1657,
+        "y": 0.9036,
+        "w": 0.6686,
+        "h": 0.0807
+      },
+      "px": {
+        "x": 228,
+        "y": 694,
+        "w": 920,
+        "h": 62
+      },
+      "aspect": 14.8387,
+      "palette": [
+        {
+          "hex": "#f8f8f7",
+          "coverage": 0.932
+        },
+        {
+          "hex": "#14151a",
+          "coverage": 0.0275
+        },
+        {
+          "hex": "#b3b1b1",
+          "coverage": 0.0178
+        },
+        {
+          "hex": "#45474b",
+          "coverage": 0.013
+        },
+        {
+          "hex": "#7a7a7e",
+          "coverage": 0.0097
+        }
+      ],
+      "detail": {
+        "energy": 24.8771
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 28,
+      "cropPath": "region-28.png"
+    },
+    {
+      "id": "trust-item-1",
+      "kind": "text",
+      "note": "Mercado Pago integrado trust item with subtle outline icon",
+      "grid": null,
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "box": {
+        "x": 0.173,
+        "y": 0.9245,
+        "w": 0.1788,
+        "h": 0.0417
+      },
+      "px": {
+        "x": 238,
+        "y": 710,
+        "w": 246,
+        "h": 32
+      },
+      "aspect": 7.6875,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8488
+        },
+        {
+          "hex": "#141619",
+          "coverage": 0.0605
+        },
+        {
+          "hex": "#b3b3b6",
+          "coverage": 0.0426
+        },
+        {
+          "hex": "#757577",
+          "coverage": 0.0314
+        },
+        {
+          "hex": "#414347",
+          "coverage": 0.0168
+        }
+      ],
+      "detail": {
+        "energy": 52.5557
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 29,
+      "cropPath": "region-29.png"
+    },
+    {
+      "id": "trust-item-2",
+      "kind": "text",
+      "note": "0% comisiones trust item with subtle outline icon",
+      "grid": null,
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "box": {
+        "x": 0.3735,
+        "y": 0.9245,
+        "w": 0.1206,
+        "h": 0.0417
+      },
+      "px": {
+        "x": 514,
+        "y": 710,
+        "w": 166,
+        "h": 32
+      },
+      "aspect": 5.1875,
+      "palette": [
+        {
+          "hex": "#f6f6f5",
+          "coverage": 0.9002
+        },
+        {
+          "hex": "#191921",
+          "coverage": 0.0426
+        },
+        {
+          "hex": "#7a7d7f",
+          "coverage": 0.0245
+        },
+        {
+          "hex": "#c9c5c9",
+          "coverage": 0.018
+        },
+        {
+          "hex": "#51535d",
+          "coverage": 0.0147
+        }
+      ],
+      "detail": {
+        "energy": 34.6987
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 30,
+      "cropPath": "region-30.png"
+    },
+    {
+      "id": "trust-item-3",
+      "kind": "text",
+      "note": "SSL 256-bit trust item with subtle outline icon",
+      "grid": null,
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "box": {
+        "x": 0.5189,
+        "y": 0.9245,
+        "w": 0.1003,
+        "h": 0.0417
+      },
+      "px": {
+        "x": 714,
+        "y": 710,
+        "w": 138,
+        "h": 32
+      },
+      "aspect": 4.3125,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.882
+        },
+        {
+          "hex": "#0d0e10",
+          "coverage": 0.04
+        },
+        {
+          "hex": "#918f90",
+          "coverage": 0.036
+        },
+        {
+          "hex": "#cac7c3",
+          "coverage": 0.028
+        },
+        {
+          "hex": "#616166",
+          "coverage": 0.014
+        }
+      ],
+      "detail": {
+        "energy": 30.8137
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 31,
+      "cropPath": "region-31.png"
+    },
+    {
+      "id": "trust-item-4",
+      "kind": "text",
+      "note": "Notificaciones WhatsApp trust item with subtle outline icon",
+      "grid": null,
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "box": {
+        "x": 0.6439,
+        "y": 0.9245,
+        "w": 0.1788,
+        "h": 0.0417
+      },
+      "px": {
+        "x": 886,
+        "y": 710,
+        "w": 246,
+        "h": 32
+      },
+      "aspect": 7.6875,
+      "palette": [
+        {
+          "hex": "#f7f8f7",
+          "coverage": 0.8505
+        },
+        {
+          "hex": "#14161b",
+          "coverage": 0.0464
+        },
+        {
+          "hex": "#cac8c8",
+          "coverage": 0.0396
+        },
+        {
+          "hex": "#6e7071",
+          "coverage": 0.0385
+        },
+        {
+          "hex": "#979898",
+          "coverage": 0.0249
+        }
+      ],
+      "detail": {
+        "energy": 54.3256
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 32,
+      "cropPath": "region-32.png"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "foreground-mask",
+      "regionId": "phone-hero-photo",
+      "message": "phone-hero-title exclude 17.0% of this reference. Check that the excluded pixels contain foreground, not artwork between separate text elements. Split overly broad foreground bounds; review grouping must not change geometry."
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region header-bar: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region builder-card: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region preset-thumb-4: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region phone-frame: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region phone-frame: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region phone-hero-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region trust-bar: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)"
+    },
+    {
+      "severity": "warning",
+      "code": "uncovered-ink",
+      "regionId": null,
+      "message": "11 grid cells have detail outside named regions. This is a coverage heuristic, not proof of missing components."
+    }
+  ],
+  "overlaps": [
+    {
+      "a": "header-bar",
+      "b": "brand-logo",
+      "pixels": 8536.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "header-bar",
+      "b": "nav-links",
+      "pixels": 16992.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "header-bar",
+      "b": "nav-cta",
+      "pixels": 8064.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-step-rail",
+      "pixels": 65472.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-brand-header",
+      "pixels": 17992.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-logo-and-colors",
+      "pixels": 22836.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-product-input",
+      "pixels": 17992.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-photo-label",
+      "pixels": 3388.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-photo-dropzone",
+      "pixels": 7800.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "preset-thumb-1",
+      "pixels": 2250.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "preset-thumb-2",
+      "pixels": 2200.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "preset-thumb-3",
+      "pixels": 2200.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "preset-thumb-4",
+      "pixels": 2350.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-price-input",
+      "pixels": 19376.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "builder-card",
+      "b": "builder-cta",
+      "pixels": 15224.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-store-nav",
+      "pixels": 6764.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-hero-photo",
+      "pixels": 27492.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-hero-title",
+      "pixels": 4672.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-catalog-heading",
+      "pixels": 3696.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-product-1-photo",
+      "pixels": 6320.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-product-2-photo",
+      "pixels": 6320.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-frame",
+      "b": "phone-product-captions",
+      "pixels": 6308.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "phone-hero-photo",
+      "b": "phone-hero-title",
+      "pixels": 4672.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "trust-bar",
+      "b": "trust-item-1",
+      "pixels": 7872.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "trust-bar",
+      "b": "trust-item-2",
+      "pixels": 5312.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "trust-bar",
+      "b": "trust-item-3",
+      "pixels": 4416.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "trust-bar",
+      "b": "trust-item-4",
+      "pixels": 7872.0,
+      "relationship": "container extent"
+    }
+  ],
+  "reviewGroups": {
+    "trust-item": [
+      "trust-item-1",
+      "trust-item-2",
+      "trust-item-3",
+      "trust-item-4"
+    ]
+  },
+  "uncoveredInkCells": [
+    "C1",
+    "D1",
+    "E1",
+    "F1",
+    "G1",
+    "H1",
+    "D3",
+    "E3",
+    "F3",
+    "G3",
+    "H3"
+  ],
+  "comparisonSheets": [
+    {
+      "path": "comparison-1.png",
+      "regionIds": [
+        "phone-hero-photo"
+      ]
+    }
+  ]
+}

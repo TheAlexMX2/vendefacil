@@ -1,104 +1,67 @@
 import React from 'react';
-import { Palette, Link2, Share2, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function HowItWorks() {
   const steps = [
     {
-      number: '01',
-      title: 'Diseña tu tienda aquí mismo',
-      description: 'Elige tu nombre, sube tu producto estrella y define tu precio en menos de 60 segundos con nuestro editor interactivo.',
-      badge: 'Cero Código',
-      icon: Palette,
-      highlight: 'Sin plantillas confusas',
+      number: '1',
+      title: 'Arma tu escaparate en vivo',
+      description:
+        'Escribe el nombre de tu marca, sube la foto de tu producto estrella y fija tu precio en pesos mexicanos. Tu subdominio .vendefacil.online queda listo al instante.',
     },
     {
-      number: '02',
-      title: 'Conecta Mercado Pago con un clic',
-      description: 'Vincula tu cuenta de Mercado Pago autorizando con tu usuario. Sin claves de API complejas, certificados raros ni programadores.',
-      badge: '100% Seguro',
-      icon: Link2,
-      highlight: 'Dinero directo a tu banco',
+      number: '2',
+      title: 'Vincula Mercado Pago con tu cuenta',
+      description:
+        'Autoriza tu cuenta de Mercado Pago en un paso sin claves técnicas ni programadores. El dinero de cada compra llega directo a tu cuenta.',
     },
     {
-      number: '03',
-      title: 'Comparte tu enlace y recibe pedidos',
-      description: 'Pega tu enlace en Instagram, TikTok o WhatsApp. Tus clientes te compran al instante y recibes avisos de ventas en tu teléfono.',
-      badge: 'Vende 24/7',
-      icon: Share2,
-      highlight: 'Catálogo de hasta 10 productos',
+      number: '3',
+      title: 'Comparte tu enlace y recibe avisos',
+      description:
+        'Pon tu liga en Instagram, TikTok o WhatsApp. Cada vez que entra un pedido recibes notificación en tu celular y administras hasta 10 productos desde tu panel.',
     },
   ];
 
   return (
-    <section id="como-funciona" className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold mb-3">
-            <span>Sencillo, Veloz y Rentable</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Cómo Funciona VendeFácil en 3 Pasos
+    <section
+      id="como-funciona"
+      className="py-20 lg:py-24 bg-white border-y border-[#E6E4DF]"
+    >
+      <div className="max-w-[1040px] mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="lg:col-span-5">
+          <h2 className="text-[30px] sm:text-[36px] font-bold tracking-[-0.025em] leading-[1.14] text-[#14151A]">
+            De idea a tienda activa en tres pasos
           </h2>
-          <p className="text-base sm:text-lg text-slate-600">
-            Olvídate de semanas de configuración o plataformas costosas que se quedan con parte de tus ganancias.
+          <p className="mt-4 text-[16px] text-[#4B4B52] leading-relaxed">
+            Sin instalaciones, sin plantillas enredadas y sin entregar parte de cada venta. Arma tu catálogo, conecta tu cuenta y empieza a cobrar hoy.
           </p>
-        </div>
-
-        {/* 3 Step Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-card-hover hover:border-brand-300 hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between group"
-              >
-                {/* Step Number Background */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors shadow-sm">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <span className="text-4xl font-black text-slate-100 group-hover:text-brand-100 transition-colors font-mono">
-                    {step.number}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-3 mb-6">
-                  <div className="inline-block px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700 font-bold text-[11px]">
-                    {step.badge}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-
-                {/* Bottom Highlight pill */}
-                <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                  <span>{step.highlight}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom prompt to scroll back to editor */}
-        <div className="mt-12 text-center">
           <a
             href="#creador"
-            className="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 hover:underline"
+            className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#156563] hover:text-[#104E4D] hover:underline transition-colors"
           >
-            <span>Pruébalo ahora en el editor arriba</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Probar ahora en el editor</span>
+            <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
 
+        <ol className="lg:col-span-7 divide-y divide-[#E6E4DF] border-t border-b border-[#E6E4DF]">
+          {steps.map((step) => (
+            <li key={step.number} className="py-7 flex gap-5 items-start">
+              <span className="w-7 h-7 rounded-full border border-[#D5D1C9] text-[12px] font-semibold text-[#14151A] tabular-nums flex items-center justify-center shrink-0 mt-0.5 bg-[#FAFAF9]">
+                {step.number}
+              </span>
+              <div>
+                <h3 className="text-[18px] font-bold text-[#14151A] tracking-[-0.01em]">
+                  {step.title}
+                </h3>
+                <p className="mt-1.5 text-[14.5px] text-[#4B4B52] leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

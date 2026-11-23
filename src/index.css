@@ -1,33 +1,95 @@
+@font-face {
+  font-family: 'Figtree';
+  src: url('/fonts/figtree-latin.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-ground: #F6F4F1;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #EFECE6;
+  --ink-primary: #14151A;
+  --ink-secondary: #4B4B52;
+  --ink-muted: #6E6D74;
+  --border-subtle: #E6E4DF;
+  --accent: #156563;
+  --accent-hover: #104E4D;
+  --accent-soft: #EEF6F5;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--bg-ground);
+    color: var(--ink-primary);
+  }
+
+  ::selection {
+    background-color: #156563;
+    color: #FFFFFF;
+  }
+
+  input,
+  textarea {
+    caret-color: #156563;
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+
+  :focus-visible {
+    outline: 2px solid #156563;
+    outline-offset: 2px;
   }
 }
 
-/* Custom modern scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F3F1ED;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #CEC9C0;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #ADA79C;
 }
 
-/* Hide scrollbar for clean carousels / tabs if needed */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.ease-expo {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

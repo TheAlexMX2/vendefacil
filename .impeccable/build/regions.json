@@ -1,0 +1,235 @@
+{
+  "draft": false,
+  "allowUncovered": true,
+  "regions": [
+    {
+      "id": "header-bar",
+      "kind": "chrome",
+      "container": true,
+      "pixelBox": { "x": 0, "y": 0, "w": 1376, "h": 74 },
+      "note": "Full-width warm-white top navigation bar separated by a subtle warm stone bottom hairline"
+    },
+    {
+      "id": "brand-logo",
+      "kind": "chrome",
+      "parentId": "header-bar",
+      "pixelBox": { "x": 58, "y": 14, "w": 194, "h": 44 },
+      "note": "Dark charcoal rounded square V emblem paired with bold VendeFácil wordmark"
+    },
+    {
+      "id": "nav-links",
+      "kind": "control",
+      "parentId": "header-bar",
+      "pixelBox": { "x": 670, "y": 18, "w": 472, "h": 36 },
+      "note": "Horizontal top navigation links Cómo funciona, Precios, Ejemplos, and Iniciar sesión"
+    },
+    {
+      "id": "nav-cta",
+      "kind": "control",
+      "parentId": "header-bar",
+      "pixelBox": { "x": 1148, "y": 12, "w": 168, "h": 48 },
+      "note": "Solid forest-teal primary header button Crear mi tienda"
+    },
+    {
+      "id": "hero-headline",
+      "kind": "text",
+      "pixelBox": { "x": 310, "y": 118, "w": 756, "h": 108 },
+      "note": "Centered two-line dark charcoal display headline Tu tienda en línea lista para vender. Sin código, sin comisiones."
+    },
+    {
+      "id": "hero-subtitle",
+      "kind": "text",
+      "pixelBox": { "x": 420, "y": 228, "w": 538, "h": 38 },
+      "note": "Centered offer subtitle $99 MXN al mes · Cobra directo con Mercado Pago"
+    },
+    {
+      "id": "builder-card",
+      "kind": "chrome",
+      "container": true,
+      "pixelBox": { "x": 304, "y": 284, "w": 552, "h": 386 },
+      "note": "Elevated white rounded interactive store builder card with subtle warm border and soft shadow"
+    },
+    {
+      "id": "builder-step-rail",
+      "kind": "control",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 310, "y": 290, "w": 176, "h": 372 },
+      "note": "Left vertical 4-step navigation rail showing 1 Tu marca active in teal, 2 Apariencia, 3 Producto, 4 Publicar"
+    },
+    {
+      "id": "builder-brand-header",
+      "kind": "text",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 298, "w": 346, "h": 52 },
+      "note": "Editable brand heading Café Don Pedro above live subdomain cafedonpedro.vendefacil.online · Disponible"
+    },
+    {
+      "id": "builder-logo-and-colors",
+      "kind": "control",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 354, "w": 346, "h": 66 },
+      "note": "Square Logo Subir logo uploader beside Color de tienda label and six circular theme color swatches"
+    },
+    {
+      "id": "builder-product-input",
+      "kind": "control",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 422, "w": 346, "h": 52 },
+      "note": "Nombre del producto label and text field showing Café de Especialidad 500g"
+    },
+    {
+      "id": "builder-photo-label",
+      "kind": "text",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 476, "w": 154, "h": 22 },
+      "note": "Field label reading Foto del producto above the upload control"
+    },
+    {
+      "id": "builder-photo-dropzone",
+      "kind": "control",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 498, "w": 156, "h": 50 },
+      "note": "Dashed Arrastra tu foto file upload area with upload icon"
+    },
+    {
+      "id": "preset-thumb-1",
+      "kind": "image",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 651, "y": 497, "w": 45, "h": 50 },
+      "note": "Square studio photograph of matte dark specialty coffee bag on warm neutral background"
+    },
+    {
+      "id": "preset-thumb-2",
+      "kind": "image",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 697, "y": 497, "w": 44, "h": 50 },
+      "note": "Square photograph of roasted specialty coffee beans and ceramic cup on dark wood"
+    },
+    {
+      "id": "preset-thumb-3",
+      "kind": "image",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 741, "y": 497, "w": 44, "h": 50 },
+      "note": "Square photograph of specialty iced coffee glass on minimalist linen table"
+    },
+    {
+      "id": "preset-thumb-4",
+      "kind": "image",
+      "parentId": "builder-card",
+      "bleed": true,
+      "pixelBox": { "x": 785, "y": 497, "w": 47, "h": 50 },
+      "note": "Square photograph of artisanal bakery pastry and coffee packaging box"
+    },
+    {
+      "id": "builder-price-input",
+      "kind": "control",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 550, "w": 346, "h": 56 },
+      "note": "Precio field label and numeric MXN input displaying $280 MXN"
+    },
+    {
+      "id": "builder-cta",
+      "kind": "control",
+      "parentId": "builder-card",
+      "pixelBox": { "x": 492, "y": 612, "w": 346, "h": 44 },
+      "note": "Full-width solid forest-teal CTA button Publicar esta tienda por $99 MXN/mes"
+    },
+    {
+      "id": "phone-frame",
+      "kind": "chrome",
+      "container": true,
+      "codeDrawn": true,
+      "pixelBox": { "x": 872, "y": 284, "w": 198, "h": 386 },
+      "note": "CSS rounded dark-bezel mobile viewport frame with top notch enclosing the live Café Don Pedro storefront"
+    },
+    {
+      "id": "phone-store-nav",
+      "kind": "chrome",
+      "parentId": "phone-frame",
+      "pixelBox": { "x": 882, "y": 310, "w": 178, "h": 38 },
+      "note": "Mobile storefront top bar displaying Café Don Pedro brand name, search icon, and bag icon"
+    },
+    {
+      "id": "phone-hero-photo",
+      "kind": "image",
+      "parentId": "phone-frame",
+      "bleed": true,
+      "pixelBox": { "x": 887, "y": 348, "w": 168, "h": 158 },
+      "note": "Warm moody editorial photograph of steaming white coffee cup and falling roasted beans on dark wood"
+    },
+    {
+      "id": "phone-hero-title",
+      "kind": "text",
+      "parentId": "phone-frame",
+      "pixelBox": { "x": 898, "y": 412, "w": 146, "h": 32 },
+      "note": "White centered store display heading Café Don Pedro overlaid on the coffee banner"
+    },
+    {
+      "id": "phone-catalog-heading",
+      "kind": "text",
+      "parentId": "phone-frame",
+      "pixelBox": { "x": 886, "y": 512, "w": 154, "h": 24 },
+      "note": "Mobile storefront catalog section heading Café de Especialidad"
+    },
+    {
+      "id": "phone-product-1-photo",
+      "kind": "image",
+      "parentId": "phone-frame",
+      "pixelBox": { "x": 891, "y": 538, "w": 79, "h": 80 },
+      "note": "Studio photograph of dark matte specialty coffee bag on warm cream background"
+    },
+    {
+      "id": "phone-product-2-photo",
+      "kind": "image",
+      "parentId": "phone-frame",
+      "pixelBox": { "x": 971, "y": 538, "w": 79, "h": 80 },
+      "note": "Warm studio photograph of espresso cup and roasted coffee beans on wooden board"
+    },
+    {
+      "id": "phone-product-captions",
+      "kind": "text",
+      "parentId": "phone-frame",
+      "pixelBox": { "x": 888, "y": 618, "w": 166, "h": 38 },
+      "note": "Two side-by-side product titles and $280 MXN prices beneath the mobile product thumbnails"
+    },
+    {
+      "id": "trust-bar",
+      "kind": "chrome",
+      "container": true,
+      "pixelBox": { "x": 228, "y": 694, "w": 920, "h": 62 },
+      "note": "Quiet horizontal four-item trust ledger below a subtle top stone hairline rule"
+    },
+    {
+      "id": "trust-item-1",
+      "kind": "text",
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "pixelBox": { "x": 238, "y": 710, "w": 246, "h": 32 },
+      "note": "Mercado Pago integrado trust item with subtle outline icon"
+    },
+    {
+      "id": "trust-item-2",
+      "kind": "text",
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "pixelBox": { "x": 514, "y": 710, "w": 166, "h": 32 },
+      "note": "0% comisiones trust item with subtle outline icon"
+    },
+    {
+      "id": "trust-item-3",
+      "kind": "text",
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "pixelBox": { "x": 714, "y": 710, "w": 138, "h": 32 },
+      "note": "SSL 256-bit trust item with subtle outline icon"
+    },
+    {
+      "id": "trust-item-4",
+      "kind": "text",
+      "parentId": "trust-bar",
+      "reviewGroup": "trust-item",
+      "pixelBox": { "x": 886, "y": 710, "w": 246, "h": 32 },
+      "note": "Notificaciones WhatsApp trust item with subtle outline icon"
+    }
+  ]
+}
