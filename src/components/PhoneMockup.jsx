@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Search, ShoppingBag, Check } from 'lucide-react';
 import { formatMXN } from '../utils/formatters.js';
+import { useBuilderStore } from '../stores/useBuilderStore.js';
 
-export default function PhoneMockup({ storeState }) {
-  const [cartCount, setCartCount] = useState(0);
-  const [boughtSuccess, setBoughtSuccess] = useState(false);
+export default function PhoneMockup() {
+  const brandName = useBuilderStore((s) => s.brandName);
+  const brandLogo = useBuilderStore((s) => s.brandLogo);
+  const themeColor = useBuilderStore((s) => s.themeColor);
+  const categoryTitle = useBuilderStore((s) => s.categoryTitle);
+  const productName = useBuilderStore((s) => s.productName);
+  const productPrice = useBuilderStore((s) => s.productPrice);
+  const productImage = useBuilderStore((s) => s.productImage);
+  const heroImage = useBuilderStore((s) => s.heroImage);
+  const secondary = useBuilderStore((s) => s.secondaryProduct);
+  const cartCount = useBuilderStore((s) => s.cartCount);
+  const boughtSuccess = useBuilderStore((s) => s.boughtSuccess);
+  const simulateBuy = useBuilderStore((s) => s.simulateBuy);
 
-  const displayBrand = storeState.brandName.trim() || 'Mi Tienda';
-  const displayProduct = storeState.productName.trim() || 'Producto Estrella';
-  const displayPrice = storeState.productPrice > 0 ? storeState.productPrice : 0;
-  const themeHex = storeState.themeColor?.hex || '#156563';
-  const themeTextHex = storeState.themeColor?.textHex || '#FFFFFF';
-  const heroSrc = storeState.heroImage || storeState.productImage;
-  const secondary = storeState.secondaryProduct;
-
-  const handleSimulatedBuy = () => {
-    setBoughtSuccess(true);
-    setCartCount((c) => c + 1);
-    setTimeout(() => setBoughtSuccess(false), 2000);
-  };
+  const displayBrand = brandName.trim() || 'Mi Tienda';
+  const displayProduct = productName.trim() || 'Producto Estrella';
+  const displayPrice = productPrice > 0 ? productPrice : 0;
+  const themeHex = themeColor?.hex || '#156563';
+  const themeTextHex = themeColor?.textHex || '#FFFFFF';
+  const heroSrc = heroImage || productImage;
 
   return (
     <div className="w-[248px] sm:w-[258px] bg-[#16171C] rounded-[34px] p-[7px] shadow-phone border border-[#2D2F38] flex flex-col">
@@ -29,9 +33,9 @@ export default function PhoneMockup({ storeState }) {
 
         <div className="px-3 py-1.5 border-b border-[#EFECE6] flex items-center justify-between bg-white shrink-0">
           <div className="flex items-center gap-1.5 min-w-0">
-            {storeState.brandLogo && (
+            {brandLogo && (
               <img
-                src={storeState.brandLogo}
+                src={brandLogo}
                 alt={displayBrand}
                 className="w-4 h-4 object-contain rounded shrink-0"
               />
@@ -72,14 +76,14 @@ export default function PhoneMockup({ storeState }) {
 
         <div className="p-2.5 flex flex-col bg-white">
           <p className="text-[11.5px] font-bold text-[#14151A] mb-1.5 truncate">
-            {storeState.categoryTitle || 'Catálogo destacado'}
+            {categoryTitle || 'Catálogo destacado'}
           </p>
 
           <div className="grid grid-cols-2 gap-2">
             <div>
               <div className="aspect-square rounded-lg overflow-hidden bg-[#F3F1ED] border border-[#ECEAE4]">
                 <img
-                  src={storeState.productImage}
+                  src={productImage}
                   alt={displayProduct}
                   className="w-full h-full object-cover"
                 />
@@ -95,7 +99,7 @@ export default function PhoneMockup({ storeState }) {
             <div>
               <div className="aspect-square rounded-lg overflow-hidden bg-[#F3F1ED] border border-[#ECEAE4]">
                 <img
-                  src={secondary?.imageUrl || storeState.productImage}
+                  src={secondary?.imageUrl || productImage}
                   alt={secondary?.name || 'Segundo producto'}
                   className="w-full h-full object-cover"
                 />
@@ -111,7 +115,7 @@ export default function PhoneMockup({ storeState }) {
 
           <button
             type="button"
-            onClick={handleSimulatedBuy}
+            onClick={simulateBuy}
             style={{
               backgroundColor: boughtSuccess ? '#147A5C' : themeHex,
               color: boughtSuccess ? '#FFFFFF' : themeTextHex,

@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Menu, X } from 'lucide-react';
+import { useUIStore } from '../stores/useUIStore.js';
 
-export default function Header({ onOpenLogin }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export default function Header() {
+  const mobileMenuOpen = useUIStore((s) => s.mobileMenuOpen);
+  const setMobileMenuOpen = useUIStore((s) => s.setMobileMenuOpen);
+  const toggleMobileMenu = useUIStore((s) => s.toggleMobileMenu);
+  const openLoginModal = useUIStore((s) => s.openLoginModal);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#F6F4F1]/95 backdrop-blur-sm border-b border-[#E6E4DF]">
@@ -52,7 +56,7 @@ export default function Header({ onOpenLogin }) {
             </a>
             <button
               type="button"
-              onClick={onOpenLogin}
+              onClick={openLoginModal}
               className="text-[14px] font-medium text-[#14151A] hover:text-[#156563] transition-colors cursor-pointer"
             >
               Iniciar sesión
@@ -68,14 +72,14 @@ export default function Header({ onOpenLogin }) {
           <div className="flex md:hidden items-center gap-2">
             <button
               type="button"
-              onClick={onOpenLogin}
+              onClick={openLoginModal}
               className="px-3 py-1.5 text-[13px] font-semibold text-[#14151A] border border-[#D5D1C9] rounded-lg bg-white"
             >
               Acceder
             </button>
             <button
               type="button"
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              onClick={toggleMobileMenu}
               className="p-2 text-[#14151A] hover:bg-[#F3F1ED] rounded-lg transition-colors"
               aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={mobileMenuOpen}

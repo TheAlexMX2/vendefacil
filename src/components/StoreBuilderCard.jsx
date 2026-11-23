@@ -1,7 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Upload, Check, X } from 'lucide-react';
 import { slugifyBrand } from '../utils/formatters.js';
 import { PHOTO_PRESETS, THEME_COLORS } from '../data/presets.js';
+import { useBuilderStore } from '../stores/useBuilderStore.js';
+import { useUIStore } from '../stores/useUIStore.js';
 
 const STEPS = [
   { id: 1, label: 'Tu marca', shortLabel: 'Marca' },
@@ -10,7 +12,7 @@ const STEPS = [
   { id: 4, label: 'Publicar', shortLabel: 'Precio' },
 ];
 
-export default function StoreBuilderCard({ storeState, setStoreState, onPublishClick }) {
+export default function StoreBuilderCard() {
   const fileInputRef = useRef(null);
   const logoInputRef = useRef(null);
   const brandInputRef = useRef(null);
@@ -18,10 +20,29 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
   const priceInputRef = useRef(null);
   const colorSectionRef = useRef(null);
 
-  const [activeStep, setActiveStep] = useState(1);
-  const [isDragging, setIsDragging] = useState(false);
+  const brandName = useBuilderStore((s) => s.brandName);
+  const brandLogo = useBuilderStore((s) => s.brandLogo);
+  const themeColor = useBuilderStore((s) => s.themeColor);
+  const productName = useBuilderStore((s) => s.productName);
+  const productPrice = useBuilderStore((s) => s.productPrice);
+  const productImage = useBuilderStore((s) => s.productImage);
+  const activeStep = useBuilderStore((s) => s.activeStep);
+  const isDragging = useBuilderStore((s) => s.isDragging);
 
-  const brandSlug = slugifyBrand(storeState.brandName);
+  const setActiveStep = useBuilderStore((s) => s.setActiveStep);
+  const setIsDragging = useBuilderStore((s) => s.setIsDragging);
+  const setBrandName = useBuilderStore((s) => s.setBrandName);
+  const clearBrandLogo = useBuilderStore((s) => s.clearBrandLogo);
+  const uploadLogoFile = useBuilderStore((s) => s.uploadLogoFile);
+  const setThemeColor = useBuilderStore((s) => s.setThemeColor);
+  const setProductName = useBuilderStore((s) => s.setProductName);
+  const setProductPriceFromInput = useBuilderStore((s) => s.setProductPriceFromInput);
+  const uploadProductFile = useBuilderStore((s) => s.uploadProductFile);
+  const applyPhotoPreset = useBuilderStore((s) => s.applyPhotoPreset);
+
+  const openPublishModal = useUIStore((s) => s.openPublishModal);
+
+  const brandSlug = slugifyBrand(brandName);
 
   const handleStepClick = (stepId) => {
     setActiveStep(stepId);
@@ -31,59 +52,12 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
     if (stepId === 4) priceInputRef.current?.focus();
   };
 
-  const handleBrandChange = (e) => {
-    setActiveStep(1);
-    setStoreState((prev) => ({ ...prev, brandName: e.target.value }));
-  };
-
-  const handleLogoUpload = (file) => {
-    if (!file || !file.type.startsWith('image/')) return;
-    setActiveStep(2);
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setStoreState((prev) => ({ ...prev, brandLogo: event.target.result }));
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleProductChange = (e) => {
-    setActiveStep(3);
-    setStoreState((prev) => ({ ...prev, productName: e.target.value }));
-  };
-
-  const handlePriceChange = (e) => {
-    setActiveStep(4);
-    const rawVal = e.target.value.replace(/[^0-9]/g, '');
-    const num = rawVal === '' ? 0 : parseInt(rawVal, 10);
-    setStoreState((prev) => ({ ...prev, productPrice: num }));
-  };
-
-  const handleFileUpload = (file) => {
-    if (!file || !file.type.startsWith('image/')) return;
-    setActiveStep(3);
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setStoreState((prev) => ({ ...prev, productImage: event.target.result }));
-    };
-    reader.readAsDataURL(file);
-  };
-
   const handleDrop = (e) => {
     e.preventDefault();
     setIsDragging(false);
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFileUpload(e.dataTransfer.files[0]);
+      uploadProductFile(e.dataTransfer.files[0]);
     }
-  };
-
-  const applyPhotoPreset = (preset) => {
-    setActiveStep(3);
-    setStoreState((prev) => ({
-      ...prev,
-      productImage: preset.previewImageUrl,
-      productName: preset.productName,
-      productPrice: preset.price,
-    }));
   };
 
   return (
@@ -134,9 +108,9 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             id="brand-name-input"
             ref={brandInputRef}
             type="text"
-            value={storeState.brandName}
+            value={brandName}
             onFocus={() => setActiveStep(1)}
-            onChange={handleBrandChange}
+            onChange={(e) => setBrandName(e.target.value)}
             placeholder="Nombre de tu marca"
             className="w-full text-[20px] font-bold tracking-[-0.015em] text-[#14151A] bg-transparent border-b border-[#D5D1C9] hover:border-[#ADA79C] focus:border-[#156563] focus:outline-none pb-0.5 transition-colors duration-200 ease-expo placeholder:text-[#9A9891]"
           />
@@ -154,20 +128,20 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             <input
               type="file"
               ref={logoInputRef}
-              onChange={(e) => e.target.files?.[0] && handleLogoUpload(e.target.files[0])}
+              onChange={(e) => e.target.files?.[0] && uploadLogoFile(e.target.files[0])}
               accept="image/*"
               className="hidden"
             />
-            {storeState.brandLogo ? (
+            {brandLogo ? (
               <div className="w-[76px] h-[48px] rounded-lg border border-[#D5D1C9] bg-[#FAFAF9] px-1.5 flex items-center justify-between gap-1">
                 <img
-                  src={storeState.brandLogo}
+                  src={brandLogo}
                   alt="Logo de marca"
                   className="w-9 h-9 object-contain rounded"
                 />
                 <button
                   type="button"
-                  onClick={() => setStoreState((prev) => ({ ...prev, brandLogo: null }))}
+                  onClick={clearBrandLogo}
                   className="p-1 text-[#6E6D74] hover:text-[#14151A] cursor-pointer"
                   aria-label="Quitar logo"
                 >
@@ -192,15 +166,12 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             </span>
             <div className="flex items-center gap-2">
               {THEME_COLORS.map((col) => {
-                const isSelected = (storeState.themeColor?.id || 'pine') === col.id;
+                const isSelected = (themeColor?.id || 'pine') === col.id;
                 return (
                   <button
                     key={col.id}
                     type="button"
-                    onClick={() => {
-                      setActiveStep(2);
-                      setStoreState((prev) => ({ ...prev, themeColor: col }));
-                    }}
+                    onClick={() => setThemeColor(col)}
                     title={col.name}
                     aria-label={`Color ${col.name}`}
                     aria-pressed={isSelected}
@@ -237,9 +208,9 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             id="product-name-input"
             ref={productInputRef}
             type="text"
-            value={storeState.productName}
+            value={productName}
             onFocus={() => setActiveStep(3)}
-            onChange={handleProductChange}
+            onChange={(e) => setProductName(e.target.value)}
             placeholder="Ej. Café de Especialidad 500g"
             className="w-full px-3 py-1.5 text-[13.5px] font-medium text-[#14151A] bg-white border border-[#DCD9D2] rounded-lg focus:border-[#156563] focus:outline-none focus:ring-2 focus:ring-[#156563]/15 transition-colors placeholder:text-[#9A9891]"
           />
@@ -275,7 +246,7 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
               <input
                 type="file"
                 ref={fileInputRef}
-                onChange={(e) => e.target.files?.[0] && handleFileUpload(e.target.files[0])}
+                onChange={(e) => e.target.files?.[0] && uploadProductFile(e.target.files[0])}
                 accept="image/*"
                 className="hidden"
               />
@@ -288,8 +259,8 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
             <div className="grid grid-cols-4 sm:flex items-center gap-1.5 shrink-0">
               {PHOTO_PRESETS.map((preset) => {
                 const isSelected =
-                  storeState.productImage === preset.previewImageUrl ||
-                  storeState.productImage === preset.imageUrl;
+                  productImage === preset.previewImageUrl ||
+                  productImage === preset.imageUrl;
                 return (
                   <button
                     key={preset.id}
@@ -328,9 +299,9 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
               ref={priceInputRef}
               type="text"
               inputMode="numeric"
-              value={storeState.productPrice === 0 ? '' : storeState.productPrice}
+              value={productPrice === 0 ? '' : productPrice}
               onFocus={() => setActiveStep(4)}
-              onChange={handlePriceChange}
+              onChange={(e) => setProductPriceFromInput(e.target.value)}
               placeholder="280"
               className="w-full pl-6 pr-12 py-1.5 text-[13.5px] font-semibold text-[#14151A] tabular-nums bg-white border border-[#DCD9D2] rounded-lg focus:border-[#156563] focus:outline-none focus:ring-2 focus:ring-[#156563]/15 transition-colors"
             />
@@ -343,7 +314,7 @@ export default function StoreBuilderCard({ storeState, setStoreState, onPublishC
         <button
           id="publicar-cta"
           type="button"
-          onClick={onPublishClick}
+          onClick={openPublishModal}
           className="w-full py-2.5 px-4 bg-[#156563] hover:bg-[#104E4D] active:scale-[0.99] text-white text-[13.5px] font-semibold rounded-lg transition-colors duration-200 ease-expo cursor-pointer"
         >
           Publicar esta tienda por $99 MXN/mes

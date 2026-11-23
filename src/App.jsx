@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Check } from 'lucide-react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
@@ -9,60 +9,25 @@ import StoreExamples from './components/StoreExamples.jsx';
 import Footer from './components/Footer.jsx';
 import PublishModal from './components/PublishModal.jsx';
 import LoginModal from './components/LoginModal.jsx';
-import { DEFAULT_STORE } from './data/presets.js';
+import { useUIStore } from './stores/useUIStore.js';
 
 export default function App() {
-  const [storeState, setStoreState] = useState(DEFAULT_STORE);
-  const [isPublishOpen, setIsPublishOpen] = useState(false);
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState(null);
-
-  const handleOpenPublish = () => {
-    setIsPublishOpen(true);
-  };
-
-  const handleLoadExample = (example) => {
-    setStoreState({
-      brandName: example.name,
-      brandLogo: null,
-      themeColor: example.themeColor || DEFAULT_STORE.themeColor,
-      categoryTitle: example.category || DEFAULT_STORE.categoryTitle,
-      productName: example.productName,
-      productPrice: example.price,
-      productImage: example.imageUrl,
-      heroImage: example.heroImageUrl || example.imageUrl,
-      secondaryProduct: example.secondaryProduct || null,
-    });
-    setToastMessage(`Tienda “${example.name}” cargada en el editor.`);
-    setTimeout(() => setToastMessage(null), 3200);
-
-    const creatorElement = document.getElementById('creador');
-    if (creatorElement) {
-      creatorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  };
+  const toastMessage = useUIStore((s) => s.toastMessage);
 
   return (
     <div className="min-h-screen bg-[#F6F4F1] flex flex-col text-[#14151A]">
-      <Header onOpenLogin={() => setIsLoginOpen(true)} />
+      <Header />
 
       <main className="flex-1">
-        <Hero
-          storeState={storeState}
-          setStoreState={setStoreState}
-          onPublishClick={handleOpenPublish}
-        >
-          <PhoneMockup storeState={storeState} />
+        <Hero>
+          <PhoneMockup />
         </Hero>
 
         <HowItWorks />
 
-        <Pricing onPublishClick={handleOpenPublish} />
+        <Pricing />
 
-        <StoreExamples
-          onLoadExample={handleLoadExample}
-          currentBrandName={storeState.brandName}
-        />
+        <StoreExamples />
       </main>
 
       <Footer />
@@ -78,16 +43,9 @@ export default function App() {
         </div>
       )}
 
-      <PublishModal
-        isOpen={isPublishOpen}
-        onClose={() => setIsPublishOpen(false)}
-        storeState={storeState}
-      />
+      <PublishModal />
 
-      <LoginModal
-        isOpen={isLoginOpen}
-        onClose={() => setIsLoginOpen(false)}
-      />
+      <LoginModal />
     </div>
   );
 }

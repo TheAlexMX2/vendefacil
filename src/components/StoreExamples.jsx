@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowUpRight, Check } from 'lucide-react';
 import { PRODUCT_PRESETS } from '../data/presets.js';
 import { formatMXN, slugifyBrand } from '../utils/formatters.js';
+import { useBuilderStore } from '../stores/useBuilderStore.js';
 
-export default function StoreExamples({ onLoadExample, currentBrandName }) {
-  const [clickedId, setClickedId] = useState(null);
-
-  const handleClick = (item) => {
-    setClickedId(item.id);
-    onLoadExample(item);
-    setTimeout(() => setClickedId(null), 2500);
-  };
+export default function StoreExamples() {
+  const currentBrandName = useBuilderStore((s) => s.brandName);
+  const recentlyLoadedExampleId = useBuilderStore((s) => s.recentlyLoadedExampleId);
+  const loadExample = useBuilderStore((s) => s.loadExample);
 
   return (
     <section id="ejemplos" className="py-20 lg:py-24 bg-[#F6F4F1] border-t border-[#E6E4DF]">
@@ -26,7 +23,8 @@ export default function StoreExamples({ onLoadExample, currentBrandName }) {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {PRODUCT_PRESETS.map((item) => {
-            const isLoaded = clickedId === item.id || currentBrandName === item.name;
+            const isLoaded =
+              recentlyLoadedExampleId === item.id || currentBrandName === item.name;
             const slug = slugifyBrand(item.name);
 
             return (
@@ -61,7 +59,7 @@ export default function StoreExamples({ onLoadExample, currentBrandName }) {
 
                 <button
                   type="button"
-                  onClick={() => handleClick(item)}
+                  onClick={() => loadExample(item)}
                   className={`mt-4 w-full py-2.5 px-3.5 rounded-lg text-[13px] font-semibold border transition-colors duration-200 ease-expo flex items-center justify-center gap-1.5 cursor-pointer ${
                     isLoaded
                       ? 'bg-[#156563] text-white border-[#156563]'

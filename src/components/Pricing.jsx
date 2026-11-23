@@ -1,7 +1,10 @@
 import React from 'react';
 import { Check, ArrowRight, Globe } from 'lucide-react';
+import { useUIStore } from '../stores/useUIStore.js';
 
-export default function Pricing({ onPublishClick }) {
+export default function Pricing() {
+  const openPublishModal = useUIStore((s) => s.openPublishModal);
+
   const features = [
     'Subdominio gratuito e inmediato (tu-marca.vendefacil.online)',
     'Catálogo de hasta 10 productos estrella listo para redes sociales',
@@ -48,7 +51,7 @@ export default function Pricing({ onPublishClick }) {
 
               <button
                 type="button"
-                onClick={onPublishClick}
+                onClick={openPublishModal}
                 className="mt-7 w-full py-3.5 px-5 bg-[#156563] hover:bg-[#104E4D] text-white text-[15px] font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Comenzar ahora por $99 MXN</span>

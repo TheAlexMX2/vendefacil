@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Mail, MessageCircle, X } from 'lucide-react';
+import { useUIStore } from '../stores/useUIStore.js';
 
 const LEGAL_DOCS = {
   privacidad: {
@@ -21,15 +22,11 @@ const LEGAL_DOCS = {
 };
 
 export default function Footer() {
-  const [activeDoc, setActiveDoc] = useState(null);
-
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === 'Escape' && activeDoc) setActiveDoc(null);
-    };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [activeDoc]);
+  const activeDoc = useUIStore((s) =>
+    s.activeModal === 'legal' ? s.activeLegalDoc : null
+  );
+  const openLegalModal = useUIStore((s) => s.openLegalModal);
+  const closeModal = useUIStore((s) => s.closeModal);
 
   return (
     <footer className="bg-[#14151A] text-[#D4D2CC] pt-16 pb-10">
@@ -99,7 +96,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => setActiveDoc(LEGAL_DOCS.privacidad)}
+                  onClick={() => openLegalModal(LEGAL_DOCS.privacidad)}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Aviso de privacidad
@@ -108,7 +105,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => setActiveDoc(LEGAL_DOCS.terminos)}
+                  onClick={() => openLegalModal(LEGAL_DOCS.terminos)}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Términos del servicio
@@ -117,7 +114,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => setActiveDoc(LEGAL_DOCS.reembolsos)}
+                  onClick={() => openLegalModal(LEGAL_DOCS.reembolsos)}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Cancelaciones y reembolsos
@@ -126,7 +123,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => setActiveDoc(LEGAL_DOCS.seguridad)}
+                  onClick={() => openLegalModal(LEGAL_DOCS.seguridad)}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Seguridad y cifrado SSL
@@ -173,7 +170,7 @@ export default function Footer() {
           aria-labelledby="legal-modal-title"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14151A]/60 backdrop-blur-sm"
         >
-          <div className="absolute inset-0" onClick={() => setActiveDoc(null)} />
+          <div className="absolute inset-0" onClick={closeModal} />
           <div className="relative z-10 w-full max-w-md bg-white text-[#14151A] rounded-2xl border border-[#E6E4DF] shadow-modal p-6">
             <div className="flex items-center justify-between gap-4 pb-3 border-b border-[#E6E4DF]">
               <h3 id="legal-modal-title" className="text-[18px] font-bold">
@@ -181,7 +178,7 @@ export default function Footer() {
               </h3>
               <button
                 type="button"
-                onClick={() => setActiveDoc(null)}
+                onClick={closeModal}
                 className="p-1.5 rounded-lg text-[#52525B] hover:text-[#14151A] hover:bg-[#F3F1ED] cursor-pointer"
                 aria-label="Cerrar aviso legal"
               >
@@ -193,7 +190,7 @@ export default function Footer() {
             </p>
             <button
               type="button"
-              onClick={() => setActiveDoc(null)}
+              onClick={closeModal}
               className="mt-6 w-full py-2.5 bg-[#156563] hover:bg-[#104E4D] text-white text-[14px] font-semibold rounded-lg transition-colors cursor-pointer"
             >
               Entendido

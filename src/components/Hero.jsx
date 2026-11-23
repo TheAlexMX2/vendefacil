@@ -2,7 +2,7 @@ import React from 'react';
 import StoreBuilderCard from './StoreBuilderCard.jsx';
 import TrustBar from './TrustBar.jsx';
 
-export default function Hero({ storeState, setStoreState, onPublishClick, children }) {
+export default function Hero({ children }) {
   return (
     <section className="pt-4 pb-6 sm:pt-6 sm:pb-8 bg-[#F6F4F1]">
       <div className="max-w-[1140px] mx-auto px-4 sm:px-8">
@@ -22,11 +22,7 @@ export default function Hero({ storeState, setStoreState, onPublishClick, childr
 
         <div className="mt-4 sm:mt-5 max-w-[890px] mx-auto flex flex-col lg:flex-row items-center lg:items-center justify-center gap-5 sm:gap-6">
           <div className="w-full lg:w-[604px] shrink-0">
-            <StoreBuilderCard
-              storeState={storeState}
-              setStoreState={setStoreState}
-              onPublishClick={onPublishClick}
-            />
+            <StoreBuilderCard />
           </div>
 
           <div className="w-full lg:w-[260px] shrink-0 flex justify-center">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   X,
   CheckCircle2,
@@ -13,50 +13,32 @@ import {
   Check,
 } from 'lucide-react';
 import { slugifyBrand } from '../utils/formatters.js';
+import { useBuilderStore } from '../stores/useBuilderStore.js';
+import { useUIStore } from '../stores/useUIStore.js';
 
-export default function PublishModal({ isOpen, onClose, storeState }) {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [useMagicLink, setUseMagicLink] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [copiedUrl, setCopiedUrl] = useState(false);
+export default function PublishModal() {
+  const isOpen = useUIStore((s) => s.activeModal === 'publish');
+  const closeModal = useUIStore((s) => s.closeModal);
+  const publishForm = useUIStore((s) => s.publishForm);
+  const publishStatus = useUIStore((s) => s.publishStatus);
+  const updatePublishForm = useUIStore((s) => s.updatePublishForm);
+  const toggleMagicLink = useUIStore((s) => s.toggleMagicLink);
+  const submitPublishCheckout = useUIStore((s) => s.submitPublishCheckout);
+  const copyStoreUrl = useUIStore((s) => s.copyStoreUrl);
 
-  const brandSlug = slugifyBrand(storeState.brandName);
-  const storeUrl = `https://${brandSlug}.vendefacil.online`;
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsSuccess(false);
-      setIsProcessing(false);
-      setCopiedUrl(false);
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  const brandName = useBuilderStore((s) => s.brandName);
 
   if (!isOpen) return null;
 
+  const { fullName, email, password, useMagicLink } = publishForm;
+  const { isProcessing, isSuccess, copiedUrl } = publishStatus;
+
+  const brandSlug = slugifyBrand(brandName);
+  const storeUrl = `https://${brandSlug}.vendefacil.online`;
+
   const handleCheckout = (e) => {
     e.preventDefault();
-    setIsProcessing(true);
-    setTimeout(() => {
-      setIsProcessing(false);
-      setIsSuccess(true);
-    }, 900);
-  };
-
-  const handleCopyUrl = () => {
-    navigator.clipboard?.writeText(storeUrl);
-    setCopiedUrl(true);
-    setTimeout(() => setCopiedUrl(false), 2000);
+    submitPublishCheckout();
   };
 
   return (
@@ -66,12 +48,12 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
       aria-labelledby="publish-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14151A]/55 backdrop-blur-sm"
     >
-      <div className="absolute inset-0" onClick={onClose} />
+      <div className="absolute inset-0" onClick={closeModal} />
 
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-modal border border-[#E6E4DF] p-6 sm:p-8 z-10 max-h-[92vh] overflow-y-auto">
         <button
           type="button"
-          onClick={onClose}
+          onClick={closeModal}
           className="absolute top-5 right-5 p-2 text-[#52525B] hover:text-[#14151A] hover:bg-[#F3F1ED] rounded-lg transition-colors cursor-pointer"
           aria-label="Cerrar ventana"
         >
@@ -103,7 +85,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
                 </span>
                 <button
                   type="button"
-                  onClick={handleCopyUrl}
+                  onClick={() => copyStoreUrl(storeUrl)}
                   className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[#D5D1C9] bg-white hover:border-[#14151A] text-[12px] font-semibold text-[#14151A] shrink-0 cursor-pointer transition-colors"
                 >
                   {copiedUrl ? (
@@ -128,7 +110,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
 
             <button
               type="button"
-              onClick={onClose}
+              onClick={closeModal}
               className="w-full py-3 bg-[#156563] hover:bg-[#104E4D] text-white font-semibold text-[14px] rounded-lg transition-colors cursor-pointer"
             >
               Volver a la tienda de muestra
@@ -138,7 +120,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
           <form onSubmit={handleCheckout} className="space-y-4">
             <div className="pr-8">
               <h3 id="publish-modal-title" className="text-[22px] font-bold text-[#14151A] tracking-[-0.015em]">
-                Publicar “{storeState.brandName || 'Mi Tienda'}”
+                Publicar “{brandName || 'Mi Tienda'}”
               </h3>
               <p className="text-[13.5px] text-[#4B4B52] mt-1">
                 Crea tu acceso para administrar pedidos, catálogo y Mercado Pago.
@@ -175,7 +157,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
                     required
                     autoComplete="name"
                     value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
+                    onChange={(e) => updatePublishForm({ fullName: e.target.value })}
                     placeholder="Sofía Mendoza"
                     className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#DCD9D2] rounded-lg text-[14px] text-[#14151A] focus:outline-none focus:border-[#156563] focus:ring-2 focus:ring-[#156563]/15 transition-colors placeholder:text-[#9A9891]"
                   />
@@ -194,7 +176,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
                     required
                     autoComplete="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => updatePublishForm({ email: e.target.value })}
                     placeholder="sofia@mitienda.com"
                     className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#DCD9D2] rounded-lg text-[14px] text-[#14151A] focus:outline-none focus:border-[#156563] focus:ring-2 focus:ring-[#156563]/15 transition-colors placeholder:text-[#9A9891]"
                   />
@@ -208,7 +190,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
                   </label>
                   <button
                     type="button"
-                    onClick={() => setUseMagicLink(!useMagicLink)}
+                    onClick={toggleMagicLink}
                     className="text-[12px] font-medium text-[#156563] hover:underline cursor-pointer"
                   >
                     {useMagicLink ? 'Usar contraseña' : 'Entrar con enlace al correo'}
@@ -231,7 +213,7 @@ export default function PublishModal({ isOpen, onClose, storeState }) {
                       required={!useMagicLink}
                       autoComplete="new-password"
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={(e) => updatePublishForm({ password: e.target.value })}
                       placeholder="Mínimo 8 caracteres"
                       className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#DCD9D2] rounded-lg text-[14px] text-[#14151A] focus:outline-none focus:border-[#156563] focus:ring-2 focus:ring-[#156563]/15 transition-colors placeholder:text-[#9A9891]"
                     />

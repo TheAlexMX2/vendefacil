@@ -1,42 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { X, Lock, Mail, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { useUIStore } from '../stores/useUIStore.js';
 
-export default function LoginModal({ isOpen, onClose }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [resetSent, setResetSent] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsSuccess(false);
-      setIsLoading(false);
-      setResetSent(false);
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+export default function LoginModal() {
+  const isOpen = useUIStore((s) => s.activeModal === 'login');
+  const closeModal = useUIStore((s) => s.closeModal);
+  const loginForm = useUIStore((s) => s.loginForm);
+  const loginStatus = useUIStore((s) => s.loginStatus);
+  const updateLoginForm = useUIStore((s) => s.updateLoginForm);
+  const requestPasswordReset = useUIStore((s) => s.requestPasswordReset);
+  const submitLogin = useUIStore((s) => s.submitLogin);
 
   if (!isOpen) return null;
 
+  const { email, password } = loginForm;
+  const { isLoading, isSuccess, resetSent } = loginStatus;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSuccess(true);
-      setTimeout(() => {
-        setIsSuccess(false);
-        onClose();
-      }, 1400);
-    }, 700);
+    submitLogin();
   };
 
   return (
@@ -46,7 +28,7 @@ export default function LoginModal({ isOpen, onClose }) {
       aria-labelledby="login-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14151A]/55 backdrop-blur-sm"
     >
-      <div className="absolute inset-0" onClick={onClose} />
+      <div className="absolute inset-0" onClick={closeModal} />
 
       <div className="relative w-full max-w-md bg-white rounded-2xl shadow-modal border border-[#E6E4DF] p-6 sm:p-7 z-10">
         <div className="flex items-start justify-between mb-6">
@@ -60,7 +42,7 @@ export default function LoginModal({ isOpen, onClose }) {
           </div>
           <button
             type="button"
-            onClick={onClose}
+            onClick={closeModal}
             className="p-2 text-[#52525B] hover:text-[#14151A] hover:bg-[#F3F1ED] rounded-lg transition-colors cursor-pointer"
             aria-label="Cerrar modal"
           >
@@ -92,7 +74,7 @@ export default function LoginModal({ isOpen, onClose }) {
                   required
                   autoComplete="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => updateLoginForm({ email: e.target.value })}
                   placeholder="ejemplo@mitienda.com"
                   className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#DCD9D2] rounded-lg text-[14px] text-[#14151A] focus:outline-none focus:border-[#156563] focus:ring-2 focus:ring-[#156563]/15 transition-colors placeholder:text-[#9A9891]"
                 />
@@ -106,7 +88,7 @@ export default function LoginModal({ isOpen, onClose }) {
                 </label>
                 <button
                   type="button"
-                  onClick={() => setResetSent(true)}
+                  onClick={requestPasswordReset}
                   className="text-[12px] font-medium text-[#156563] hover:underline cursor-pointer"
                 >
                   ¿Olvidaste tu contraseña?
@@ -120,7 +102,7 @@ export default function LoginModal({ isOpen, onClose }) {
                   required
                   autoComplete="current-password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => updateLoginForm({ password: e.target.value })}
                   placeholder="••••••••"
                   className="w-full pl-9 pr-3.5 py-2.5 bg-white border border-[#DCD9D2] rounded-lg text-[14px] text-[#14151A] focus:outline-none focus:border-[#156563] focus:ring-2 focus:ring-[#156563]/15 transition-colors placeholder:text-[#9A9891]"
                 />
