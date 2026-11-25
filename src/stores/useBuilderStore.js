@@ -9,12 +9,19 @@ export const useBuilderStore = create((set) => ({
   ...DEFAULT_STORE,
   activeStep: 1,
   isDragging: false,
+  quantity: 1,
   cartCount: 0,
   boughtSuccess: false,
   recentlyLoadedExampleId: null,
 
   setActiveStep: (activeStep) => set({ activeStep }),
   setIsDragging: (isDragging) => set({ isDragging }),
+
+  incrementQuantity: () =>
+    set((state) => ({ quantity: state.quantity + 1 })),
+
+  decrementQuantity: () =>
+    set((state) => ({ quantity: Math.max(1, state.quantity - 1) })),
 
   setBrandName: (brandName) =>
     set({
@@ -87,6 +94,7 @@ export const useBuilderStore = create((set) => ({
       productImage: example.imageUrl,
       heroImage: example.heroImageUrl || example.imageUrl,
       secondaryProduct: example.secondaryProduct || null,
+      quantity: 1,
       recentlyLoadedExampleId: example.id,
     });
 
@@ -110,7 +118,7 @@ export const useBuilderStore = create((set) => ({
     clearTimeout(buyTimeoutId);
     set((state) => ({
       boughtSuccess: true,
-      cartCount: state.cartCount + 1,
+      cartCount: state.cartCount + state.quantity,
     }));
     buyTimeoutId = setTimeout(() => {
       set({ boughtSuccess: false });

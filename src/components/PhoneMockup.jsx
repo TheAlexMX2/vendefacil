@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, ShoppingBag, Check } from 'lucide-react';
+import { Search, ShoppingBag, Check, Minus, Plus } from 'lucide-react';
 import { formatMXN } from '../utils/formatters.js';
 import { useBuilderStore } from '../stores/useBuilderStore.js';
 
@@ -13,8 +13,11 @@ export default function PhoneMockup() {
   const productImage = useBuilderStore((s) => s.productImage);
   const heroImage = useBuilderStore((s) => s.heroImage);
   const secondary = useBuilderStore((s) => s.secondaryProduct);
+  const quantity = useBuilderStore((s) => s.quantity);
   const cartCount = useBuilderStore((s) => s.cartCount);
   const boughtSuccess = useBuilderStore((s) => s.boughtSuccess);
+  const incrementQuantity = useBuilderStore((s) => s.incrementQuantity);
+  const decrementQuantity = useBuilderStore((s) => s.decrementQuantity);
   const simulateBuy = useBuilderStore((s) => s.simulateBuy);
 
   const displayBrand = brandName.trim() || 'Mi Tienda';
@@ -25,8 +28,8 @@ export default function PhoneMockup() {
   const heroSrc = heroImage || productImage;
 
   return (
-    <div className="w-[248px] sm:w-[258px] bg-[#16171C] rounded-[34px] p-[7px] shadow-phone border border-[#2D2F38] flex flex-col">
-      <div className="bg-white rounded-[28px] overflow-hidden flex flex-col">
+    <div className="w-[248px] sm:w-[258px] bg-[#16171C] rounded-[34px] p-[7px] shadow-phone border border-[#2D2F38] flex flex-col min-h-[450px]">
+      <div className="bg-white rounded-[28px] overflow-hidden flex flex-col flex-grow">
         <div className="pt-1.5 pb-1 bg-white flex justify-center shrink-0">
           <div className="w-[70px] h-[14px] bg-[#16171C] rounded-full" aria-hidden="true" />
         </div>
@@ -61,7 +64,7 @@ export default function PhoneMockup() {
           </div>
         </div>
 
-        <div className="relative h-[126px] bg-[#181615] overflow-hidden shrink-0">
+        {/* <div className="relative h-[126px] bg-[#181615] overflow-hidden shrink-0">
           <img
             src={heroSrc}
             alt={`Portada de ${displayBrand}`}
@@ -72,46 +75,81 @@ export default function PhoneMockup() {
               {displayBrand}
             </span>
           </div>
-        </div>
+        </div> */}
 
         <div className="p-2.5 flex flex-col bg-white">
           <p className="text-[11.5px] font-bold text-[#14151A] mb-1.5 truncate">
             {categoryTitle || 'Catálogo destacado'}
           </p>
 
-          <div className="grid grid-cols-2 gap-2">
-            <div>
-              <div className="aspect-square rounded-lg overflow-hidden bg-[#F3F1ED] border border-[#ECEAE4]">
-                <img
-                  src={productImage}
-                  alt={displayProduct}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="mt-1 text-[10px] font-medium text-[#14151A] leading-tight line-clamp-2 min-h-[2.4em]">
-                {displayProduct}
-              </p>
-              <p className="mt-0.5 text-[10.5px] font-bold text-[#14151A] tabular-nums">
-                {formatMXN(displayPrice)}
-              </p>
+          {/* <div className="grid grid-cols-2 gap-2"> */}
+          <div>
+            <div className="aspect-square rounded-lg overflow-hidden bg-[#F3F1ED] border border-[#ECEAE4]">
+              <img
+                src={productImage}
+                alt={displayProduct}
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div>
-              <div className="aspect-square rounded-lg overflow-hidden bg-[#F3F1ED] border border-[#ECEAE4]">
-                <img
-                  src={secondary?.imageUrl || productImage}
-                  alt={secondary?.name || 'Segundo producto'}
-                  className="w-full h-full object-cover"
-                />
+            <div className="mt-2.5 flex items-center justify-between gap-2">
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] font-medium text-[#14151A] leading-tight line-clamp-2">
+                  {displayProduct}
+                </p>
+                <p className="mt-0.5 text-[11.5px] font-bold text-[#14151A] tabular-nums">
+                  {formatMXN(displayPrice)}
+                </p>
               </div>
-              <p className="mt-1 text-[10px] font-medium text-[#14151A] leading-tight line-clamp-2 min-h-[2.4em]">
-                {secondary?.name || 'Edición Especial 250g'}
-              </p>
-              <p className="mt-0.5 text-[10.5px] font-bold text-[#14151A] tabular-nums">
-                {formatMXN(secondary?.price ?? displayPrice)}
-              </p>
+
+              <div
+                role="group"
+                aria-label="Selector de cantidad"
+                className="inline-flex items-center rounded-lg border border-[#DCD9D2] bg-[#FAF9F7] p-0.5 shrink-0"
+              >
+                <button
+                  type="button"
+                  onClick={decrementQuantity}
+                  disabled={quantity <= 1}
+                  aria-label="Disminuir cantidad"
+                  className="w-6 h-6 rounded-md flex items-center justify-center text-[#14151A] hover:bg-white disabled:opacity-35 disabled:hover:bg-transparent transition-colors cursor-pointer disabled:cursor-not-allowed"
+                >
+                  <Minus className="w-3 h-3" strokeWidth={2.25} aria-hidden="true" />
+                </button>
+                <span
+                  aria-live="polite"
+                  className="min-w-[22px] px-1 text-center text-[11px] font-bold text-[#14151A] tabular-nums select-none"
+                >
+                  {quantity}
+                </span>
+                <button
+                  type="button"
+                  onClick={incrementQuantity}
+                  aria-label="Aumentar cantidad"
+                  className="w-6 h-6 rounded-md flex items-center justify-center text-[#14151A] hover:bg-white transition-colors cursor-pointer"
+                >
+                  <Plus className="w-3 h-3" strokeWidth={2.25} aria-hidden="true" />
+                </button>
+              </div>
             </div>
           </div>
+
+          {/* <div>
+            <div className="aspect-square rounded-lg overflow-hidden bg-[#F3F1ED] border border-[#ECEAE4]">
+              <img
+                src={secondary?.imageUrl || productImage}
+                alt={secondary?.name || 'Segundo producto'}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="mt-1 text-[10px] font-medium text-[#14151A] leading-tight line-clamp-2 min-h-[2.4em]">
+              {secondary?.name || 'Edición Especial 250g'}
+            </p>
+            <p className="mt-0.5 text-[10.5px] font-bold text-[#14151A] tabular-nums">
+              {formatMXN(secondary?.price ?? displayPrice)}
+            </p>
+          </div> */}
+          {/* </div> */}
 
           <button
             type="button"
@@ -120,7 +158,7 @@ export default function PhoneMockup() {
               backgroundColor: boughtSuccess ? '#147A5C' : themeHex,
               color: boughtSuccess ? '#FFFFFF' : themeTextHex,
             }}
-            className="mt-2 w-full py-2 px-2.5 rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-colors duration-300 ease-expo cursor-pointer"
+            className="mt-5 w-full py-2 px-2.5 rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-colors duration-300 ease-expo cursor-pointer"
           >
             {boughtSuccess ? (
               <>

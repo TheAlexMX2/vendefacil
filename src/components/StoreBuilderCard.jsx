@@ -79,16 +79,14 @@ export default function StoreBuilderCard() {
               role="tab"
               aria-selected={isCurrent}
               onClick={() => handleStepClick(step.id)}
-              className={`flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2.5 px-1.5 py-1.5 sm:px-2.5 sm:py-2 rounded-lg text-[11.5px] sm:text-[13px] transition-colors duration-200 ease-expo cursor-pointer text-left ${
-                isCurrent
-                  ? 'bg-[#EEF5F4] text-[#14151A] font-semibold'
-                  : 'text-[#52525B] hover:text-[#14151A] hover:bg-[#F2F0EC] font-medium'
-              }`}
+              className={`flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2.5 px-1.5 py-1.5 sm:px-2.5 sm:py-2 rounded-lg text-[11.5px] sm:text-[13px] transition-colors duration-200 ease-expo cursor-pointer text-left ${isCurrent
+                ? 'bg-[#EEF5F4] text-[#14151A] font-semibold'
+                : 'text-[#52525B] hover:text-[#14151A] hover:bg-[#F2F0EC] font-medium'
+                }`}
             >
               <span
-                className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full text-[10px] sm:text-[11px] font-semibold flex items-center justify-center shrink-0 tabular-nums transition-colors duration-200 ease-expo ${
-                  isCurrent ? 'bg-[#156563] text-white' : 'bg-[#E5E3DD] text-[#52525B]'
-                }`}
+                className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full text-[10px] sm:text-[11px] font-semibold flex items-center justify-center shrink-0 tabular-nums transition-colors duration-200 ease-expo ${isCurrent ? 'bg-[#156563] text-white' : 'bg-[#E5E3DD] text-[#52525B]'
+                  }`}
               >
                 {step.id}
               </span>
@@ -179,11 +177,10 @@ export default function StoreBuilderCard() {
                       backgroundColor: col.hex,
                       borderColor: col.borderHex || 'transparent',
                     }}
-                    className={`w-[25px] h-[25px] rounded-full border flex items-center justify-center transition-transform duration-200 ease-expo cursor-pointer ${
-                      isSelected
-                        ? 'ring-2 ring-offset-2 ring-[#14151A] scale-105'
-                        : 'hover:scale-105'
-                    }`}
+                    className={`w-[25px] h-[25px] rounded-full border flex items-center justify-center transition-transform duration-200 ease-expo cursor-pointer ${isSelected
+                      ? 'ring-2 ring-offset-2 ring-[#14151A] scale-105'
+                      : 'hover:scale-105'
+                      }`}
                   >
                     {isSelected && (
                       <Check
@@ -237,11 +234,10 @@ export default function StoreBuilderCard() {
                   fileInputRef.current?.click();
                 }
               }}
-              className={`sm:flex-1 h-[38px] sm:h-[46px] rounded-lg border border-dashed flex sm:flex-col items-center justify-center gap-2 sm:gap-0 px-3 cursor-pointer transition-colors duration-200 ease-expo ${
-                isDragging
-                  ? 'border-[#156563] bg-[#EEF6F5]'
-                  : 'border-[#D5D1C9] hover:border-[#156563] bg-[#FAFAF9]'
-              }`}
+              className={`sm:flex-1 h-[38px] sm:h-[46px] rounded-lg border border-dashed flex sm:flex-col items-center justify-center gap-2 sm:gap-0 px-3 cursor-pointer transition-colors duration-200 ease-expo ${isDragging
+                ? 'border-[#156563] bg-[#EEF6F5]'
+                : 'border-[#D5D1C9] hover:border-[#156563] bg-[#FAFAF9]'
+                }`}
             >
               <input
                 type="file"
@@ -268,11 +264,10 @@ export default function StoreBuilderCard() {
                     onClick={() => applyPhotoPreset(preset)}
                     title={preset.label}
                     aria-label={`Usar foto de ejemplo: ${preset.label}`}
-                    className={`w-full sm:w-[42px] h-[42px] sm:h-[46px] rounded-lg overflow-hidden border-2 transition-colors duration-200 ease-expo cursor-pointer shrink-0 bg-[#F3F1ED] ${
-                      isSelected
-                        ? 'border-[#156563]'
-                        : 'border-[#E6E4DF] hover:border-[#ADA79C]'
-                    }`}
+                    className={`w-full sm:w-[42px] h-[42px] sm:h-[46px] rounded-lg overflow-hidden border-2 transition-colors duration-200 ease-expo cursor-pointer shrink-0 bg-[#F3F1ED] ${isSelected
+                      ? 'border-[#156563]'
+                      : 'border-[#E6E4DF] hover:border-[#ADA79C]'
+                      }`}
                   >
                     <img
                       src={preset.imageUrl}
@@ -303,6 +298,7 @@ export default function StoreBuilderCard() {
               onFocus={() => setActiveStep(4)}
               onChange={(e) => setProductPriceFromInput(e.target.value)}
               placeholder="280"
+              maxLength={10}
               className="w-full pl-6 pr-12 py-1.5 text-[13.5px] font-semibold text-[#14151A] tabular-nums bg-white border border-[#DCD9D2] rounded-lg focus:border-[#156563] focus:outline-none focus:ring-2 focus:ring-[#156563]/15 transition-colors"
             />
             <span className="absolute right-3 text-[12px] font-medium text-[#6E6D74] pointer-events-none">
